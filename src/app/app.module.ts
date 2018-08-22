@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { PagesComponent } from './componet/pages/pages.component';
 import { NavbarComponent } from './componet/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MenuComponent } from './componet/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
