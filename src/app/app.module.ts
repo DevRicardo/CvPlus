@@ -2,20 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatGridListModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatGridListModule, MatSidenavModule, MatListModule, MatDialogModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { PagesComponent } from './componet/pages/pages.component';
 import { NavbarComponent } from './componet/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MenuComponent } from './componet/menu/menu.component';
+import { LoginComponent } from './componet/login/login.component';
+import { HomeComponent } from './componet/pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagesComponent,
     NavbarComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,11 @@ import { MenuComponent } from './componet/menu/menu.component';
     MatGridListModule,
     LayoutModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
