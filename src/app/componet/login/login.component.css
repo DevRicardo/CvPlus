@@ -6,3 +6,17 @@ textarea {
     height: 100px;
     resize: vertical;
 }
+
+#formLogin{
+    text-align: center;
+    width: 400px;
+}
+
+@media ( max-width:768px){
+    #formLogin{
+    width: auto;
+    }
+    #formLogin h1{        
+        font-size: 1em;
+    }
+}

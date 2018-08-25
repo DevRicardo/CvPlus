@@ -10,20 +10,20 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material";
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  description:string;
+  usuario:string;
   clave:string;
 
   constructor(private fb: FormBuilder,
     private dialogRef: MatDialogRef<LoginComponent>,
     @Inject(MAT_DIALOG_DATA) data) { 
-
-      this.description = data.description;
+      console.log(data.title);  
+      this.usuario = data.usuario;
       this.clave = data.clave;
     }
 
   ngOnInit() {
     this.form = this.fb.group({
-      description: [this.description, []],      
+      usuario: [this.usuario, []],      
       clave:[this.clave,[]]
     });
   }
