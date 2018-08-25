@@ -1,8 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatIconModule, MatGridListModule, MatSidenavModule, MatListModule, MatDialogModule } from '@angular/material';
+import { 
+  MatButtonModule, 
+  MatCheckboxModule, 
+  MatToolbarModule, 
+  MatIconModule, 
+  MatGridListModule, 
+  MatSidenavModule, 
+  MatListModule, 
+  MatDialogModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componet/navbar/navbar.component';
@@ -30,7 +42,11 @@ import { HomeComponent } from './componet/pages/home/home.component';
     LayoutModule,
     MatSidenavModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   entryComponents: [
     LoginComponent

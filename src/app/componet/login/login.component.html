@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<h1>Inicio de sesión</h1>
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+      <input matInput
+              placeholder="Usuario"
+             formControlName="usuario">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="password"
+            placeholder="Clave de acceso"
+            formControlName="clave"
+            >
+  </mat-form-field>
+  
+  
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="close()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="save()">Iniciar</button>
+</mat-dialog-actions>
