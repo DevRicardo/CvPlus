@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private http:HttpClientModule) { }
 
-  getUserDetails(){
+  getUserDetails(usuario:string, clave:string){
     
   }
 }

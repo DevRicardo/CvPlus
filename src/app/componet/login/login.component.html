@@ -5,13 +5,13 @@
   <mat-form-field>
       <input matInput
               placeholder="Usuario"
-             formControlName="usuario">
+             formControlName="usuario" [(ngModel)]="usuario">
   </mat-form-field>
 
   <mat-form-field>
     <input matInput type="password"
             placeholder="Clave de acceso"
-            formControlName="clave"
+            formControlName="clave" [(ngModel)]="clave"
             >
   </mat-form-field>
   

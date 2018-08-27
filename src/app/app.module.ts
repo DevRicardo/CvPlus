@@ -17,6 +17,12 @@ import {
   MatInputModule
 } from '@angular/material';
 
+import { AngularFireModule } from 'angularfire2';
+
+// New imports to update based on AngularFire2 version 4
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componet/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -24,6 +30,14 @@ import { MenuComponent } from './componet/menu/menu.component';
 import { LoginComponent } from './componet/login/login.component';
 import { HomeComponent } from './componet/pages/home/home.component';
 import { BlogComponent } from './componet/blog/blog.component';
+
+export const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};
 
 @NgModule({
   declarations: [
@@ -50,6 +64,9 @@ import { BlogComponent } from './componet/blog/blog.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     RouterModule.forRoot([
       {
         path: '',
