@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   
-  save() {
+  loginUser() {
     this.dialogRef.close(this.form.value);
   }
 
