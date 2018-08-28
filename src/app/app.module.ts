@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { environment } from '../environments/environment';
 import { 
   MatButtonModule, 
   MatCheckboxModule, 
@@ -16,7 +17,7 @@ import {
   MatFormFieldModule,
   MatInputModule
 } from '@angular/material';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 
 // New imports to update based on AngularFire2 version 4
@@ -64,7 +65,8 @@ export const firebaseConfig = {
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RouterModule.forRoot([
