@@ -15,7 +15,8 @@ import {
   MatDialogModule,
   MatCardModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTabsModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -31,14 +32,6 @@ import { MenuComponent } from './componet/menu/menu.component';
 import { LoginComponent } from './componet/login/login.component';
 import { HomeComponent } from './componet/pages/home/home.component';
 import { BlogComponent } from './componet/blog/blog.component';
-
-export const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  storageBucket: "",
-  messagingSenderId: ""
-};
 
 @NgModule({
   declarations: [
@@ -65,6 +58,7 @@ export const firebaseConfig = {
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatTabsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
