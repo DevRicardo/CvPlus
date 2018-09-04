@@ -4,19 +4,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
-import { 
-  MatButtonModule, 
-  MatCheckboxModule, 
-  MatToolbarModule, 
-  MatIconModule, 
-  MatGridListModule, 
-  MatSidenavModule, 
-  MatListModule, 
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatGridListModule,
+  MatSidenavModule,
+  MatListModule,
   MatDialogModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTabsModule
+  MatTabsModule,
+  MatDividerModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -60,6 +61,7 @@ import { BlogComponent } from './componet/blog/blog.component';
     MatInputModule,
     MatTabsModule,
     HttpClientModule,
+    MatDividerModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -67,15 +69,19 @@ import { BlogComponent } from './componet/blog/blog.component';
       {
         path: '',
         redirectTo: '/home',
-        pathMatch: 'full' 
+        pathMatch: 'full'
       },
       {
-        path:'home',
-        component:HomeComponent
+        path: 'home',
+        component: HomeComponent
       },
       {
-        path:'blog',
-        component:BlogComponent
+        path: 'blog',
+        component: BlogComponent
+      },
+      {
+        path: 'dashboard',
+        component: BlogComponent
       }
     ])
   ],

@@ -11,16 +11,14 @@ import * as firebase from 'firebase/app';
 export class LoginService {
 
   constructor(
-    private http:HttpClientModule,
-    private afAuth:AngularFireAuth
+    private http: HttpClientModule,
+    private afAuth: AngularFireAuth
   ) { }
 
-  getUserDetails(usuario:string, clave:string){
-    
-  }
+  getUserDetails(usuario: string, clave: string){}
 
-  registerUser(usuario:string, clave:string){
-    return new Promise((resolve, reject) =>{
+  registerUser(usuario: string, clave: string) {
+    return new Promise((resolve, reject) => {
       this.afAuth.auth.createUserWithEmailAndPassword(usuario, clave)
       .then(
         userData => resolve(userData),
@@ -30,8 +28,8 @@ export class LoginService {
   }
 
 
-  singIn(usuario:string, clave:string){
-    return new Promise((resolve, reject) =>{
+  singIn(usuario: string, clave: string) {
+    return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithEmailAndPassword(usuario, clave)
       .then(
         userData => resolve(userData),
@@ -40,11 +38,11 @@ export class LoginService {
     });
   }
 
-  getAuth(){
+  getAuth() {
     return this.afAuth.authState.pipe(map(auth => auth));
   }
 
-  singOut(){
+  singOut() {
     return this.afAuth.auth.signOut();
   }
 }

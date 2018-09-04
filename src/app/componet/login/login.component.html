@@ -1,4 +1,4 @@
-<div id="formLogin">
+<div id="formLoginAndRegister" *ngIf="login">
 <h1>Inicio de sesión</h1>
 <mat-dialog-content [formGroup]="form">
 
@@ -14,7 +14,10 @@
             formControlName="clave" [(ngModel)]="clave"
             >
   </mat-form-field>
-  
+
+  <button mat-button (click)="activeRegister(true)">Registrate</button>
+
+ 
   
 </mat-dialog-content>
 
@@ -24,3 +27,31 @@
 </mat-dialog-actions>
 
 </div>
+
+<div id="formLoginAndRegister" *ngIf="register">
+  <h1>Registrate</h1>
+  <mat-dialog-content [formGroup]="form">
+  
+    <mat-form-field>
+        <input matInput
+                placeholder="Usuario"
+               formControlName="usuario" [(ngModel)]="usuario">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput type="password"
+              placeholder="Clave de acceso"
+              formControlName="clave" [(ngModel)]="clave"
+              >
+    </mat-form-field>
+    
+    <button mat-button (click)="activeRegister(false)">Inicia sesión</button>
+    
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="createUser()">Registrarse</button>
+  </mat-dialog-actions>
+  
+  </div>
