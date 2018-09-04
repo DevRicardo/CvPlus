@@ -4,6 +4,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import { LoginService } from '../../services/Login/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ResponseConstants } from '../../store/ResponseConstants';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   clave: string;
   login = true;
   register = false;
+  response: ResponseConstants;
 
   constructor(private fb: FormBuilder,
     private dialogRef: MatDialogRef<LoginComponent>,
@@ -25,10 +27,9 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private toastr: ToastrService) {
 
-      console.log(data.title);
       this.usuario = data.usuario;
       this.clave = data.clave;
-
+      this.response = new ResponseConstants();
 
     }
 
@@ -58,7 +59,8 @@ export class LoginComponent implements OnInit {
       }
     ).catch(
       (err) => {
-        this.toastr.error('El susario ya esta registrado', 'Error');
+        console.log(err);
+        this.toastr.error( this.response.getMessage(err), 'Error');
       }
     );
   }
