@@ -1,7 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewContainerRef } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import { LoginService } from '../../services/Login/login.service';
+import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,11 +22,13 @@ export class LoginComponent implements OnInit {
     private dialogRef: MatDialogRef<LoginComponent>,
     @Inject(MAT_DIALOG_DATA) data,
     private loginService: LoginService,
-    private router: Router) {
+    private router: Router,
+    private toastr: ToastrService) {
 
       console.log(data.title);
       this.usuario = data.usuario;
       this.clave = data.clave;
+
 
     }
 
@@ -55,7 +58,7 @@ export class LoginComponent implements OnInit {
       }
     ).catch(
       (err) => {
-        console.log(err);
+        this.toastr.error('El susario ya esta registrado', 'Error');
       }
     );
   }

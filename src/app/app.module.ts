@@ -25,6 +25,7 @@ import { AngularFireModule } from 'angularfire2';
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componet/navbar/navbar.component';
@@ -62,6 +63,7 @@ import { BlogComponent } from './componet/blog/blog.component';
     MatTabsModule,
     HttpClientModule,
     MatDividerModule,
+    ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
