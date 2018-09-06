@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor(
     private http: HttpClientModule,
-    private afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth
   ) { }
 
   registerUser(usuario: string, clave: string) {

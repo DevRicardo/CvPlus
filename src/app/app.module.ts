@@ -21,6 +21,7 @@ import {
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
+import { AuthGuard } from './guards/auth.guard';
 
 // New imports to update based on AngularFire2 version 4
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -35,6 +36,7 @@ import { LoginComponent } from './componet/login/login.component';
 import { HomeComponent } from './componet/pages/home/home.component';
 import { BlogComponent } from './componet/blog/blog.component';
 import { DashboardComponent } from './componet/admin/dashboard/dashboard.component';
+import { LoginService } from './services/Login/login.service';
 
 @NgModule({
   declarations: [
@@ -85,14 +87,15 @@ import { DashboardComponent } from './componet/admin/dashboard/dashboard.compone
       },
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuard]
       }
     ])
   ],
   entryComponents: [
     LoginComponent
   ],
-  providers: [],
+  providers: [LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
