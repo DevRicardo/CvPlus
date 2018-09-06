@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import { LoginComponent } from '../login/login.component';
+import { LoginService } from '../../services/Login/login.service';
+import { ResponseConstants } from '../../store/ResponseConstants';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -9,13 +13,34 @@ import { LoginComponent } from '../login/login.component';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  response: ResponseConstants;
+  private isLogin: boolean;
+  private nombreUsuario: string;
+  private emailUsuario: string;
+
+  constructor(public dialog: MatDialog,
+    private loginService: LoginService,
+    private toastr: ToastrService,
+    private router: Router) {
+
+      this.response = new ResponseConstants();
+
+    }
 
   ngOnInit() {
+    this.loginService.getAuth().subscribe( auth => {
+      if ( auth ) {
+        this.isLogin = true;
+        this.nombreUsuario = auth.displayName;
+        this.emailUsuario = auth.email;
+      } else {
+        this.isLogin = false;
+      }
+    });
   }
 
-  openFormLogin(){
-    
+  openFormLogin() {
+
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -29,6 +54,19 @@ export class MenuComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+    });
+  }
+
+
+  singOut() {
+    this.loginService.singOut()
+    .then( (success) => {
+      console.log(success);
+      this.router.navigate(['/home']);
+    })
+    .catch( (err) => {
+      console.log(err);
+      this.toastr.error('No se puede salir del sistema', 'Error');
     });
   }
 

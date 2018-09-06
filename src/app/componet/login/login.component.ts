@@ -41,9 +41,17 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    this.dialogRef.close(this.form.value);
-    this.loginService.getUserDetails(this.usuario, this.clave);
-    console.log(this.usuario + ' //// ' + this.clave);
+    this.loginService.singIn(this.usuario, this.clave)
+    .then( (success) => {
+      this.dialogRef.close(this.form.value);
+      this.clave = '';
+      this.usuario = '';
+      this.router.navigate(['/dashboard']);
+    })
+    .catch( (err) => {
+      this.clave = '';
+      this.toastr.error( this.response.getMessage(err), 'Error');
+    });
   }
 
   close() {

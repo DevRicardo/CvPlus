@@ -34,6 +34,7 @@ import { MenuComponent } from './componet/menu/menu.component';
 import { LoginComponent } from './componet/login/login.component';
 import { HomeComponent } from './componet/pages/home/home.component';
 import { BlogComponent } from './componet/blog/blog.component';
+import { DashboardComponent } from './componet/admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { BlogComponent } from './componet/blog/blog.component';
     MenuComponent,
     LoginComponent,
     HomeComponent,
-    BlogComponent
+    BlogComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +85,7 @@ import { BlogComponent } from './componet/blog/blog.component';
       },
       {
         path: 'dashboard',
-        component: BlogComponent
+        component: DashboardComponent
       }
     ])
   ],
