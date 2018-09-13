@@ -5,6 +5,7 @@ import { LoginService } from '../../services/Login/login.service';
 import { ResponseConstants } from '../../store/ResponseConstants';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { State } from '../../store/State';
 
 @Component({
   selector: 'app-menu',
@@ -61,7 +62,7 @@ export class MenuComponent implements OnInit {
   singOut() {
     this.loginService.singOut()
     .then( (success) => {
-      console.log(success);
+      State.logOut();
       this.router.navigate(['/home']);
     })
     .catch( (err) => {

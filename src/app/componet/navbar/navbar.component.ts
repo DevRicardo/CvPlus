@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { LoginService } from '../../services/Login/login.service';
+import { State } from '../../store/State';
 
 @Component({
   selector: 'app-navbar',
@@ -16,8 +18,10 @@ export class NavbarComponent {
     );
 
   constructor(
-    private breakpointObserver: BreakpointObserver) {
+    private breakpointObserver: BreakpointObserver,
+    private loginService: LoginService) {
 
+      console.log(State.getLogged());
 
   }
 }

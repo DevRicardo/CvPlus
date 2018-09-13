@@ -5,6 +5,7 @@ import { LoginService } from '../../services/Login/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { ResponseConstants } from '../../store/ResponseConstants';
+import { State } from '../../store/State';
 
 @Component({
   selector: 'app-login',
@@ -46,6 +47,7 @@ export class LoginComponent implements OnInit {
       this.dialogRef.close(this.form.value);
       this.clave = '';
       this.usuario = '';
+      State.logged();
       this.router.navigate(['/dashboard']);
     })
     .catch( (err) => {

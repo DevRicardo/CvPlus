@@ -37,6 +37,7 @@ import { HomeComponent } from './componet/pages/home/home.component';
 import { BlogComponent } from './componet/blog/blog.component';
 import { DashboardComponent } from './componet/admin/dashboard/dashboard.component';
 import { LoginService } from './services/Login/login.service';
+import { appRoutes } from './routes.module';
 
 @NgModule({
   declarations: [
@@ -71,26 +72,7 @@ import { LoginService } from './services/Login/login.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'blog',
-        component: BlogComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-        canActivate: [AuthGuard]
-      }
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   entryComponents: [
     LoginComponent
