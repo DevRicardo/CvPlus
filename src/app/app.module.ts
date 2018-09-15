@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
@@ -17,7 +18,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTabsModule,
-  MatDividerModule
+  MatDividerModule,
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -66,6 +67,7 @@ import { appRoutes } from './routes.module';
     ReactiveFormsModule,
     MatInputModule,
     MatTabsModule,
+    FlexLayoutModule,
     HttpClientModule,
     MatDividerModule,
     ToastrModule.forRoot(),
