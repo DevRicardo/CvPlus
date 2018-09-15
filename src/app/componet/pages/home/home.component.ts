@@ -32,12 +32,12 @@ export class HomeComponent implements OnInit {
     {
       id: 5,
       title: 'Spring Boot',
-      img: '../../../../assets/logos/angular.svg'
+      img: '../../../../assets/logos/spring.svg'
     },
     {
       id: 6,
-      title: 'Groovy',
-      img: '../../../../assets/logos/java.svg'
+      title: 'Laravel',
+      img: '../../../../assets/logos/laravel.svg'
     },
 ];
 

@@ -36,8 +36,13 @@
   }
 
   .img {
-    width: 100%;
+    width: 70%;
     margin-bottom: 18%;
+  }
+  .mat-card-image{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .card-picture {
     width: 80%;
@@ -50,6 +55,18 @@
   .search-form {
     width: 90%;
   }
+
+  .mat-form-field {
+    display: block;
+   }
+
+   #formLoginAndRegister{
+    text-align: center;
+    width: 100%;
+}
+.ccontacto{
+    margin-bottom: 20px;
+}
   
 @media ( max-width:768px){
     #portada{
