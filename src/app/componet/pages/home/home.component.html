@@ -1,10 +1,27 @@
 <app-navbar>
-  <mat-grid-list cols="1" rowHeight="100px">
-    <div id="portada">
-      <div class="text_titulo">
-        <h1>José Alejandro Ricardo Lara</h1>
-        <h2>Ingeniero de Sistemas</h2>
-      </div>
+  
+    
+  <div id="portada">
+    <div class="text_titulo">
+      <h1>José Alejandro Ricardo Lara</h1>
+      <h2>Ingeniero de Sistemas</h2>
     </div>
-  </mat-grid-list>
+  </div>
+    
+
+  <mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile>
+      <h2>TECNOLOGIAS USADAS</h2>
+    </mat-grid-tile>
+  </mat-grid-list>     
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.9%" fxLayoutAlign="center center">
+    <mat-card class="card-picture" *ngFor="let picture of pictures">
+      <mat-card-title fxLayout.xs="row" fxLayoutAlign="center">
+        <span fxFlex="100%" fxLayoutAlign="center">{{picture.title}}</span>
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+    </mat-card>
+  </div>
+
 </app-navbar>
