@@ -15,7 +15,7 @@ import { State } from '../../store/State';
 export class MenuComponent implements OnInit {
 
   response: ResponseConstants;
-  private isLogin: boolean;
+  public isLogin: boolean;
   private nombreUsuario: string;
   private emailUsuario: string;
 
