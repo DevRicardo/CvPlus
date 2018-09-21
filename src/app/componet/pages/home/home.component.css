@@ -74,3 +74,57 @@
     font-size: 0.7em;
     }
 }
+
+
+/*   ------NEW STYLE-------- */
+
+.demo-ribbon {
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(223, 153, 49);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.container{
+  margin-top: -20vh;  
+  -ms-flex: 0 1 auto;
+  display: inline-block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  z-index: 1;
+}
+
+.section{
+  width: 100%;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 2px; 
+  margin-top: 50px;
+}
+
+.img_avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.text-name{
+  font-size: 2em;
+  color: #304ffe;
+  font-weight: bold;
+}
+.text-profesion{
+  color: slategray;
+}
+.text-center{
+  text-align: center;
+}
+.a-cerca{
+  background-color: yellow;
+  padding: 10px 10px 10px 0px;
+}

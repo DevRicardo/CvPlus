@@ -1,83 +1,43 @@
 <app-navbar>
-  
-    
-  <div id="portada">
-    <div class="text_titulo">
-      <h1>José Alejandro Ricardo Lara</h1>
-      <h2>Ingeniero de Sistemas</h2>
-    </div>
-  </div>
-    
-<!-- BLOQUE DE TECNOLOGIAS -->
-  <mat-grid-list cols="1" rowHeight="100px">
-    <mat-grid-tile>
-      <h2>TECNOLOGIAS USADAS</h2>
-    </mat-grid-tile>
-  </mat-grid-list>     
 
-  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.9%" fxLayoutAlign="center center">
-    <mat-card class="card-picture" *ngFor="let picture of pictures">
-      <mat-card-title fxLayout.xs="row" fxLayoutAlign="center">
-        <span fxFlex="100%" fxLayoutAlign="center">{{picture.title}}</span>
-      </mat-card-title>
-      <img mat-card-image fxLayoutAlign="center" [src]="picture.img">
-      <mat-card-content>
-        <p>
-          Descripción
-        </p>
-      </mat-card-content>
-      <mat-card-actions>        
-        <button mat-stroked-button color="primary" >Ver más</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
+    <div class="demo-ribbon"></div>
 
-  <!-- ENTRADAS DE BLOG -->
-  <mat-grid-list cols="1" rowHeight="100px">
-    <mat-grid-tile>
-      <h2>ÚLTIMAS ENTRADAS DEL BLOG</h2>
-    </mat-grid-tile>
-  </mat-grid-list> 
+    <div class="container">
+        <div class="ccontacto" fxLayout="row" fxLayout.xs="row" fxLayoutGap="0.9%" fxLayoutAlign="center center">
+            <div fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
+                
+            </div>
+            <div fxFlex="80%" fxFlex.sm="100%" fxFlex.sm="100%" >
+                <div class="section" [class.mat-elevation-z3]="true"  fxLayout.xs="column">
+                    
+                    <div fxFlex="50%" fxLayout="column" fxLayoutAlign="center center"> 
+                        <div fxFlex="70%" fxLayoutAlign="center center">
+                            <img class="img_avatar" [class.mat-elevation-z2]="true" src="../../../../assets/images/foto_personal.jpeg" >
+                        </div>
+                        
+                        <div fxFlex="30%" class="text-center">
+                            <div class="text-name" style="clear: both">
+                                José Alejandro Ricardo 
+                            </div>
+                            <span class="text-profesion">Ingeniero de Sistemas</span>
+                        </div>
+                    </div>
+                    <div fxFlex="50%" class="a-cerca"> 
+                            <h2>Sobre mí</h2>
+                    </div>
+                                     
+                </div>
 
-  <!-- FORMULARIO DE CONTACTO -->
+                <div class="section" [class.mat-elevation-z3]="true">
+                        SKILLS
+                </div>
 
-  <mat-grid-list cols="1" rowHeight="100px">
-    <mat-grid-tile>
-      <h2>CONTACTO</h2>
-    </mat-grid-tile>
-  </mat-grid-list> 
-
-  <div class="ccontacto" fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.9%" fxLayoutAlign="center center">
-    <div fxFlex="50%">
-      
-    </div>
-
-    <div fxFlex="50%">
-
-        <div id="formLoginAndRegister" >     
-            
-            <mat-form-field>
-                <input matInput
-                        placeholder="email" >
-            </mat-form-field>
-          
-            <mat-form-field>
-              <input matInput type="text"
-                      placeholder="Teléfono">
-            </mat-form-field>
-
-            <mat-form-field>
-                <textarea matInput placeholder="Tú mensaje"></textarea>
-            </mat-form-field>
-          
-            <button mat-flat-button color="primary">Enviar</button>
-
+            </div>        
+            <div fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
+                
+            </div>
         </div>
-
     </div>
-
-  </div>
-  
 
 
 </app-navbar>
