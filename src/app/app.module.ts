@@ -12,13 +12,13 @@ import {
   MatIconModule,
   MatGridListModule,
   MatSidenavModule,
-  MatListModule,
   MatDialogModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
   MatTabsModule,
   MatDividerModule,
+  MatListModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';

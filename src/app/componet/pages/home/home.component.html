@@ -3,7 +3,7 @@
     <div class="demo-ribbon"></div>
 
     <div class="container">
-        <div class="ccontacto" fxLayout="row" fxLayout.xs="row" fxLayoutGap="0.9%" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayout.xs="row" fxLayoutGap="0.9%" fxLayoutAlign="center center">
             <div fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
                 
             </div>
@@ -22,22 +22,31 @@
                             <span class="text-profesion">Ingeniero de Sistemas</span>
                         </div>
                     </div>
-                    <div fxFlex="50%" class="a-cerca"> 
+                    <div fxFlex="50%" class="a-cerca" [ngStyle.xs]="{'margin-left.px': 20}"> 
                         <h2 class="titulo">Sobre mí</h2>
-                        <p style="text-align: justify;">
-                            Monteriano, ingeniero de sistemas de la Universidad de Córdoba, apacionado por la numismatica, series de internet, los paseos 
-                            con mi esposa.
+                        <p style="text-align: justify;" >
+                            Monteriano, ingeniero de sistemas de la Universidad de Córdoba, apasionado por la numismática, series de Internet, los paseos con mi esposa.
                         </p>
-                        <p style="text-align: justify;">
-                            Soy autodidacta, me esfuerzo en mantenerme al días con las últimas tendencias en técnologias de front-end y back-end, se me facilita el trabajar
-                            En equipos grandes, puqueños e incluso de manera individual.
-                        </p>
-                    </div>
-                                     
+                        <p style="text-align: justify;" >
+                            Soy autodidacta, me esfuerzo en mantenerme al días con las últimas tendencias en tecnologías de front-end y back-end, se me facilita el trabajar En equipos grandes, pequeños e incluso de manera individual.
+                        </p> 
+                        <ul class="vinieta1">
+                            <li><a>contacto@josericardolara.com.co</a></li>
+                        </ul>
+                        <ul class="vinieta2">
+                            <li> <a href="https://www.linkedin.com/in/programacion01/" target="__blanck">Ver perfil</a> </li>
+                        </ul>
+                        <ul class="vinieta3">
+                            <li> <a href="https://github.com/DevRicardo" target="__blanck">Ver perfil</a> </li>
+                        </ul>
+                                                     
+                    </div>                                     
                 </div>
 
+                <h2 style="text-align: center;" >HABILIDADES</h2>
+
                 <div class="section" [class.mat-elevation-z3]="true">
-                        SKILLS
+                        
                 </div>
 
             </div>        
