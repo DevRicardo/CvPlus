@@ -81,7 +81,10 @@
 .demo-ribbon {
   width: 100%;
   height: 40vh;
-  background-color: rgb(223, 153, 49);
+  /*background-color: rgb(223, 153, 49);*/
+  background-image: url('../../../../assets/banner.jpg');
+  background-position: center;
+  background-size: cover;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -101,7 +104,7 @@
 
 .section{
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   background-color: white;
   border-radius: 2px;
   margin-bottom: 10px;
@@ -169,6 +172,6 @@ a:active {
   text-decoration: none;
 }
 
-.skills{
+.skills-padding{
   padding: 10px;
 }

@@ -18,7 +18,8 @@ import {
   MatInputModule,
   MatTabsModule,
   MatDividerModule,
-  MatListModule
+  MatListModule,
+  MatProgressBarModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -70,6 +71,7 @@ import { appRoutes } from './routes.module';
     FlexLayoutModule,
     HttpClientModule,
     MatDividerModule,
+    MatProgressBarModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
