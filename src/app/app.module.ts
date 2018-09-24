@@ -19,7 +19,8 @@ import {
   MatTabsModule,
   MatDividerModule,
   MatListModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatTooltipModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -68,6 +69,7 @@ import { appRoutes } from './routes.module';
     ReactiveFormsModule,
     MatInputModule,
     MatTabsModule,
+    MatTooltipModule,
     FlexLayoutModule,
     HttpClientModule,
     MatDividerModule,

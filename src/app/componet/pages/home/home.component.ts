@@ -11,41 +11,7 @@ export class HomeComponent implements OnInit {
 
   color = 'primary';
   mode = 'determinate';
-  value = 50;
-  bufferValue = 75;
 
-  pictures = [
-    {
-      id: 1,
-      title: 'JavaScript',
-      img: '../../../../assets/logos/javascript.svg'
-    },
-    {
-      id: 2,
-      title: 'Angular',
-      img: '../../../../assets/logos/angular.svg'
-    },
-    {
-      id: 3,
-      title: 'Java',
-      img: '../../../../assets/logos/java.svg'
-    },
-    {
-      id: 4,
-      title: 'Php',
-      img: '../../../../assets/logos/php.svg'
-    },
-    {
-      id: 5,
-      title: 'Spring Boot',
-      img: '../../../../assets/logos/spring.svg'
-    },
-    {
-      id: 6,
-      title: 'Laravel',
-      img: '../../../../assets/logos/laravel.svg'
-    },
-];
 
   constructor() { }
 
