@@ -9,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  color = 'primary';
+  color = 'warn';
   mode = 'determinate';
+  bufferValue = 0;
 
 
   constructor() { }
