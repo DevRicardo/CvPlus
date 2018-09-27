@@ -30,9 +30,46 @@
     max-width:400px;
   }
   
-  .example-header-image {
-    background-image: url('../../../../assets/logos/angular.svg');
-    background-size: cover;
+  .ucordoba-header-image {
+    background-image: url('../../../../assets/logos/ucordoba.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .sena-header-image {
+    background-image: url('../../../../assets/logos/sena.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .udemy-header-image {
+    background-image: url('../../../../assets/logos/udemy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .avanza-header-image {
+    background-image: url('../../../../assets/logos/avanza.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .emdi-header-image {
+    background-image: url('../../../../assets/logos/emdi.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .upb-header-image {
+    background-image: url('../../../../assets/logos/upb.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .data-header-image {
+    background-image: url('../../../../assets/logos/data.png');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .img {
@@ -132,12 +169,15 @@
 }
 
 .titulo{
-  border-bottom: #304ffe 4px solid;
+  border-bottom: #304ffe 2px solid;
 }
 .margin-text-sm{
   margin-left: 20px;
 }
 
+mat-card{
+  margin-bottom: 0.9%;
+}
 
 
 .vinieta1{
@@ -177,10 +217,10 @@ a:active {
 }
 
 .img-icon{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin: 5px;
-  line-height: 5;
+  line-height: 3;
 }
 
 .item-tecnologia{
