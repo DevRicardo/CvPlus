@@ -20,7 +20,8 @@ import {
   MatDividerModule,
   MatListModule,
   MatProgressBarModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatExpansionModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -76,6 +77,7 @@ import { PersonalComponent } from './componet/admin/personal/personal.component'
     HttpClientModule,
     MatDividerModule,
     MatProgressBarModule,
+    MatExpansionModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
