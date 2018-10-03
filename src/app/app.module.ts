@@ -41,6 +41,7 @@ import { BlogComponent } from './componet/blog/blog.component';
 import { DashboardComponent } from './componet/admin/dashboard/dashboard.component';
 import { LoginService } from './services/Login/login.service';
 import { appRoutes } from './routes.module';
+import { PersonalComponent } from './componet/admin/personal/personal.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { appRoutes } from './routes.module';
     LoginComponent,
     HomeComponent,
     BlogComponent,
-    DashboardComponent
+    DashboardComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,

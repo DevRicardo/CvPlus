@@ -119,7 +119,7 @@
   width: 100%;
   height: 40vh;
   /*background-color: rgb(223, 153, 49);*/
-  background-image: url('../../../../assets/logos/fondos/computer-1209641_1920.jpg');
+  background-image: url('../../../../assets/logos/fondos/halloween2.jpg');
   background-position: center;
   background-size: cover;
   -webkit-flex-shrink: 0;
@@ -168,9 +168,7 @@
   padding: 10px 20px 10px 0px;
 }
 
-.titulo{
-  border-bottom: #304ffe 2px solid;
-}
+
 .margin-text-sm{
   margin-left: 20px;
 }
@@ -180,37 +178,8 @@ mat-card{
 }
 
 
-.vinieta1{
-  list-style-image: url('../../../../assets/images/email_24.png');
-}
-.vinieta2{
-  list-style-image: url('../../../../assets/images/linkedin_24.png');
-}
-.vinieta3{
-  list-style-image: url('../../../../assets/images/github_24.png');
-}
 
-a{
-  color: black;
-  vertical-align: top;
-}
-a:link {
-  text-decoration: none;
-  color: black;
-}
 
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-  color: darkgrey;
-}
-
-a:active {
-  text-decoration: none;
-}
 
 .skills-padding{
   padding: 10px;
