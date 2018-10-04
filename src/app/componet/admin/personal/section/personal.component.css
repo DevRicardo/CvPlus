@@ -1,12 +1,12 @@
 
 .vinieta1{
-    list-style-image: url('../../../../assets/images/email_24.png');
+    list-style-image: url('../../../../../assets/images/email_24.png');
 }
 .vinieta2{
-  list-style-image: url('../../../../assets/images/linkedin_24.png');
+  list-style-image: url('../../../../../assets/images/linkedin_24.png');
 }
 .vinieta3{
-  list-style-image: url('../../../../assets/images/github_24.png');
+  list-style-image: url('../../../../../assets/images/github_24.png');
 }
 
 a{
