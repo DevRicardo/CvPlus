@@ -12,3 +12,27 @@
 a{
     font-weight: 500;
 }
+
+.img {
+  width: 70%;
+  margin-bottom: 18%;
+}
+
+.mat-card-image{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-picture {
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+.img_avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.a-cerca{
+  padding: 10px 20px 10px 0px;
+}

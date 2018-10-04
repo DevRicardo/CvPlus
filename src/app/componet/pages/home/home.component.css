@@ -28,7 +28,7 @@
 
 .example-card {
     max-width:400px;
-  }
+}
   
   .ucordoba-header-image {
     background-image: url('../../../../assets/logos/ucordoba.jpg');
@@ -72,19 +72,6 @@
     background-repeat: no-repeat;
   }
 
-  .img {
-    width: 70%;
-    margin-bottom: 18%;
-  }
-  .mat-card-image{
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .card-picture {
-    width: 80%;
-    margin-bottom: 2%;
-  }
 
   .search-form {
     width: 90%;
@@ -123,59 +110,6 @@
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
-
-.container{
-  margin-top: -20vh;  
-  -ms-flex: 0 1 auto;
-  display: inline-block;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  z-index: 1;
-}
-
-.section{
-  width: 100%;
-  min-height: 300px;
-  background-color: white;
-  border-radius: 2px;
-  margin-bottom: 10px;
-}
-
-.img_avatar{
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.text-name{
-  font-size: 2em;
-  color: #304ffe;
-  font-weight: bold;
-}
-.text-profesion{
-  color: slategray;
-}
-.text-center{
-  text-align: center;
-}
-.a-cerca{
-  padding: 10px 20px 10px 0px;
-}
-
-
-.margin-text-sm{
-  margin-left: 20px;
-}
-
-mat-card{
-  margin-bottom: 0.9%;
-}
-
-
-
 
 
 .skills-padding{
