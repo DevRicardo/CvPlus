@@ -1,5 +1,5 @@
 <app-navbar>
-    <div class="container">
+    <div class="container-admin">
         <div fxLayout="row" fxLayout.xs="row" fxLayoutGap="0.9%" fxLayoutAlign="center center" class="container-admin">
             <mat-accordion fxFlex="80%">
 
@@ -9,17 +9,11 @@
                             Datos básicos
                         </mat-panel-title>
                         <mat-panel-description>
-                        Type your name and age
+                        Información básica del perfil
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                 
-                    <mat-form-field>
-                        <input matInput placeholder="First name">
-                    </mat-form-field>
-                
-                    <mat-form-field>
-                        <input matInput placeholder="Age">
-                    </mat-form-field>
+                    <app-form></app-form>
 
                 </mat-expansion-panel>
 

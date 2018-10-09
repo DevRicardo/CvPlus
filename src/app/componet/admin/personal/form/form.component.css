@@ -1,0 +1,8 @@
+
+.example-container > * {
+width: 100%;
+}
+
+.margin-button{
+    margin-bottom: 7px;
+}

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -21,7 +21,8 @@ import {
   MatListModule,
   MatProgressBarModule,
   MatTooltipModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatSelectModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -43,6 +44,7 @@ import { DashboardComponent } from './componet/admin/dashboard/dashboard.compone
 import { LoginService } from './services/Login/login.service';
 import { appRoutes } from './routes.module';
 import { PersonalComponent } from './componet/admin/personal/section/personal.component';
+import { FormComponent } from './componet/admin/personal/form/form.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { PersonalComponent } from './componet/admin/personal/section/personal.co
     HomeComponent,
     BlogComponent,
     DashboardComponent,
-    PersonalComponent
+    PersonalComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ import { PersonalComponent } from './componet/admin/personal/section/personal.co
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    FormsModule,
     MatInputModule,
     MatTabsModule,
     MatTooltipModule,
@@ -78,6 +82,7 @@ import { PersonalComponent } from './componet/admin/personal/section/personal.co
     MatDividerModule,
     MatProgressBarModule,
     MatExpansionModule,
+    MatSelectModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
