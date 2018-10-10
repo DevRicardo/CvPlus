@@ -22,41 +22,41 @@
           <input matInput placeholder="Perfil de github">
         </mat-form-field>
 
+        <mat-form-field>
+          <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+            <mat-option value="option">Option 1</mat-option>
+            <mat-option value="option">Option 2</mat-option>
+            <mat-option value="option">Option 3</mat-option>
+            <mat-option value="option">Option 4</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
+        <button mat-stroked-button 
+          color="primary" 
+          id="uploadButton" 
+          class="md-raised md-primary margin-button" 
+          aria-label="attach_file"
+          (click)="openInput()">
+          <mat-icon class="material-icons">attach_file</mat-icon>
+          Seleccione imagen 
+        </button>
+                  
+        <mat-form-field>
+            <input [(ngModel)]="nameFile" matInput placeholder="Imagen no seleccionada" readonly="readonly">
+        </mat-form-field>
+
   </div>
 
 
   <div fxFlex class="example-container">
-    
-      <mat-form-field>
-        <mat-select placeholder="Select">
-          <mat-option value="option">Option</mat-option>
-          <mat-option value="option">Option 1</mat-option>
-          <mat-option value="option">Option 2</mat-option>
-          <mat-option value="option">Option 3</mat-option>
-          <mat-option value="option">Option 4</mat-option>
-        </mat-select>
-      </mat-form-field>
 
       <mat-form-field>
-          <textarea matInput placeholder="Textarea"></textarea>
+          <textarea class="texto-markdown" matInput [(ngModel)]="markdown" placeholder="Texto presentación"></textarea>
       </mat-form-field>
 
-
-      <input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
-      <button mat-stroked-button 
-        color="primary" 
-        id="uploadButton" 
-        class="md-raised md-primary margin-button" 
-        aria-label="attach_file"
-        (click)="openInput()">
-        <mat-icon class="material-icons">attach_file</mat-icon>
-        Seleccione imagen 
-      </button>
-                
-      <mat-form-field>
-          <input [(ngModel)]="nameFile" matInput placeholder="Imagen no seleccionada" readonly="readonly">
-      </mat-form-field>
-
+      <div class="render-markdown" markdown [data]="markdown"></div>
   </div>
 </div>
 

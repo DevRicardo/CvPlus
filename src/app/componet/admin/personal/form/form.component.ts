@@ -9,6 +9,7 @@ export class FormComponent implements OnInit {
 
   ourFile: File; // hold our file
   nameFile: string;
+  markdown: string;
 
   constructor() { }
 
