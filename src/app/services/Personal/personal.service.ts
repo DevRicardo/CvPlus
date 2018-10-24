@@ -13,10 +13,28 @@ export class PersonalService {
   personalDocument: AngularFirestoreDocument<PersonalInterface>;
 
   constructor(public afs: AngularFirestore) {
-    this.personal = afs.collection('personal').valueChanges();
+    // this.personal = afs.collection('personal').valueChanges();
+    this.personalCollection = afs.collection<PersonalInterface>('personal');
+    this.personal = this.personalCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as PersonalInterface;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
   }
 
   getPersonal() {
     return this.personal;
+  }
+
+  add(personal: PersonalInterface) {
+    this.personalCollection.add(personal);
+  }
+
+  update(personal: PersonalInterface) {
+    this.personalDocument = this.afs.doc(`/personal/${personal.id}`);
+    this.personalDocument.update(personal);
+
   }
 }

@@ -1,7 +1,7 @@
 export interface PersonalInterface {
     id?: string;
     nombre?: string;
-    ocupación?: string;
+    ocupacion?: string;
     email?: string;
     linkedin?: string;
     github?: string;
