@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonalInterface } from '../../../../models/PersonalInterface';
+import { PersonalService } from '../../../../services/Personal/personal.service';
 
 @Component({
   selector: 'app-form',
@@ -11,9 +13,12 @@ export class FormComponent implements OnInit {
   nameFile: string;
   markdown: string;
 
-  constructor() { }
+  constructor(private personalService: PersonalService) { }
 
   ngOnInit() {
+    this.personalService.getPersonal().subscribe(personal =>{
+      console.log(personal);
+    });
   }
 
   /**

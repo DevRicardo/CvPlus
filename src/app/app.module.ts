@@ -30,7 +30,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AuthGuard } from './guards/auth.guard';
 
 // New imports to update based on AngularFire2 version 4
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -46,6 +46,8 @@ import { LoginService } from './services/Login/login.service';
 import { appRoutes } from './routes.module';
 import { PersonalComponent } from './componet/admin/personal/section/personal.component';
 import { FormComponent } from './componet/admin/personal/form/form.component';
+
+import { PersonalService } from './services/Personal/personal.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +88,7 @@ import { FormComponent } from './componet/admin/personal/form/form.component';
     MatSelectModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AngularFireAuthModule,
     RouterModule.forRoot(appRoutes),
     MarkdownModule.forRoot({
@@ -107,7 +109,7 @@ import { FormComponent } from './componet/admin/personal/form/form.component';
   entryComponents: [
     LoginComponent
   ],
-  providers: [LoginService, AuthGuard],
+  providers: [LoginService, AuthGuard, PersonalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
