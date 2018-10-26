@@ -6,27 +6,24 @@
         
         <div fxFlex="30%" class="text-center">
             <div class="text-name" style="clear: both">
-                José Alejandro Ricardo 
+                {{ personal.nombre }}
             </div>
-            <span class="text-profesion">Ingeniero de Sistemas</span>
+            <span class="text-profesion">{{ personal.ocupacion }}</span>
         </div>
     </div>
-    <div fxFlex="50%" class="a-cerca" [ngStyle.xs]="{'margin-left.px': 20}">       
+    <div fxFlex="50%" class="a-cerca" [ngStyle.xs]="{'margin-left.px': 20}">  
+
         <h2 class="titulo">Sobre mí</h2>
-        <p style="text-align: justify;" >
-            Monteriano, ingeniero de sistemas de la Universidad de Córdoba, apasionado por la numismática, series de Internet y los paseos con mi esposa.
-        </p>
-        <p style="text-align: justify;" >
-            Soy autodidacta, me esfuerzo para mantenerme al día con las últimas tendencias en tecnologías de front-end y back-end, se me facilita el trabajar en equipos grandes, pequeños e incluso de manera individual.
-        </p> 
+        <div markdown [data]="personal.presentacion" style="text-align: justify;" ></div>
+
         <ul class="vinieta1">
-            <li><a>contacto@josericardolara.com.co</a></li>
+            <li><a>{{ personal.email }}</a></li>
         </ul>
         <ul class="vinieta2">
-            <li> <a href="https://www.linkedin.com/in/programacion01/" target="__blanck">Perfil de José</a> </li>
+            <li> <a href="{{ personal.linkedin }}" target="__blanck">Perfil de José</a> </li>
         </ul>
         <ul class="vinieta3">
-            <li> <a href="https://github.com/DevRicardo" target="__blanck">Reositorio de código</a> </li>
+            <li> <a href="{{ personal.github }}" target="__blanck">Reositorio de código</a> </li>
         </ul>     
                                      
     </div>                                     

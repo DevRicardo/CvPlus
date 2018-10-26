@@ -29,7 +29,6 @@ export class FormComponent implements OnInit {
       this.personalList = personal;
       if ( this.personalList.length !== 0 ) {
         this.personal = this.personalList[0];
-        console.log(this.personal);
       }
     });
   }
