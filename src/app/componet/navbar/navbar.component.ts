@@ -19,9 +19,5 @@ export class NavbarComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private loginService: LoginService) {
-
-      console.log(State.getLogged());
-
-  }
+    private loginService: LoginService) { }
 }

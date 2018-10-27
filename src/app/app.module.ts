@@ -23,7 +23,8 @@ import {
   MatProgressBarModule,
   MatTooltipModule,
   MatExpansionModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressSpinnerModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -48,6 +49,7 @@ import { PersonalComponent } from './componet/admin/personal/section/personal.co
 import { FormComponent } from './componet/admin/personal/form/form.component';
 
 import { PersonalService } from './services/Personal/personal.service';
+import { LoaderComponent } from './componet/commons/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { PersonalService } from './services/Personal/personal.service';
     BlogComponent,
     DashboardComponent,
     PersonalComponent,
-    FormComponent
+    FormComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +89,7 @@ import { PersonalService } from './services/Personal/personal.service';
     MatProgressBarModule,
     MatExpansionModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -107,7 +111,8 @@ import { PersonalService } from './services/Personal/personal.service';
     })
   ],
   entryComponents: [
-    LoginComponent
+    LoginComponent,
+    LoaderComponent
   ],
   providers: [LoginService, AuthGuard, PersonalService],
   bootstrap: [AppComponent]
