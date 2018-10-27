@@ -1,10 +1,10 @@
-import { Component, OnInit, AfterContentChecked, AfterContentInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PersonalInterface } from '../../../../models/PersonalInterface';
 import { PersonalService } from '../../../../services/Personal/personal.service';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { ToastrService } from 'ngx-toastr';
-import {MatDialog, MatDialogConfig} from '@angular/material';
-import { LoaderComponent } from 'src/app/componet/commons/loader/loader.component';
+import {MatDialog} from '@angular/material';
+import { LoaderHelper } from '../../../../utils/LoaderHelper';
 
 @Component({
   selector: 'app-form',
@@ -24,16 +24,15 @@ export class FormComponent implements OnInit {
     presentacion: ''
   };
   personalList: PersonalInterface[];
-  dialogConfig;
-  dialogRef: MatDialog;
+  private loaderHelper: LoaderHelper;
 
   constructor(
     private personalService: PersonalService,
     private toastr: ToastrService,
-    public dialog: MatDialog
+    private matDialog: MatDialog,
   ) {
-    this.dialogConfig = new MatDialogConfig();
-  }
+    this.loaderHelper = new LoaderHelper(this.matDialog);
+   }
 
   initDataFirebase() {
     this.personalService.getPersonal().subscribe(personal => {
@@ -57,27 +56,27 @@ export class FormComponent implements OnInit {
   }
 
   onGuardarPersonal(form: NgForm) {
-    this.openLoading();
+    this.loaderHelper.openLoader();
     const dateNow = Date.now();
     if ( this.personalList.length === 0 ) {
       this.personalService.add(this.personal).then(
         (success) => {
-          this.closeLoading();
+          this.loaderHelper.closeLoader();
           this.toastr.success('Se guardo correctamente', 'OK');
         },
         (error) => {
-          this.closeLoading();
+          this.loaderHelper.closeLoader();
           this.toastr.error('No se pudo guardar la información', 'Error');
         }
       );
     } else {
       this.personalService.update(this.personal).then(
         (success) => {
-          this.closeLoading();
+          this.loaderHelper.closeLoader();
           this.toastr.success('Se guardo correctamente', 'OK');
         },
         (error) => {
-          this.closeLoading();
+          this.loaderHelper.closeLoader();
           this.toastr.error('No se pudo guardar la información', 'Error');
         }
       );
@@ -90,19 +89,4 @@ export class FormComponent implements OnInit {
     }
     this.personal.imagen = this.ourFile.name;
   }
-
-  openLoading() {
-    this.dialogConfig.disableClose = false;
-    this.dialogConfig.autoFocus = true;
-    this.dialogConfig.data = {
-      message: 'Cargando...'
-    };
-
-    this.dialog.open(LoaderComponent, this.dialogConfig);
-  }
-
-  closeLoading() {
-    this.dialog.closeAll();
-  }
-
 }
