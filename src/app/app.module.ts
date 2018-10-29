@@ -33,6 +33,7 @@ import { AuthGuard } from './guards/auth.guard';
 // New imports to update based on AngularFire2 version 4
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { PersonalComponent } from './componet/admin/personal/section/personal.co
 import { FormComponent } from './componet/admin/personal/form/form.component';
 
 import { PersonalService } from './services/Personal/personal.service';
+import { FileService } from './services/File/file.service';
 import { LoaderComponent } from './componet/commons/loader/loader.component';
 
 @NgModule({
@@ -90,6 +92,7 @@ import { LoaderComponent } from './componet/commons/loader/loader.component';
     MatExpansionModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    AngularFireStorageModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
@@ -114,7 +117,7 @@ import { LoaderComponent } from './componet/commons/loader/loader.component';
     LoginComponent,
     LoaderComponent
   ],
-  providers: [LoginService, AuthGuard, PersonalService],
+  providers: [LoginService, AuthGuard, PersonalService, FileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

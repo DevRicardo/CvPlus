@@ -34,7 +34,7 @@
         </mat-form-field>-->
 
         <input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
-        <button mat-stroked-button 
+        <button mat-stroked-button type="button" 
           color="primary" 
           id="uploadButton" 
           class="md-raised md-primary margin-button" 
@@ -64,10 +64,14 @@
 
 
 <div class="actions" fxLayout="row" fxLayoutAlign="end center">
+    <div>porcentaje:{{ uploadPercent | async }}</div>
+    <a [href]="downloadURL | async">descsrgar {{ downloadURL | async }}</a>
     <button mat-raised-button color="primary">
       <mat-icon class="material-icons">save</mat-icon>
       Guardar datos 
     </button>
 </div>
+
+
 </form>
 

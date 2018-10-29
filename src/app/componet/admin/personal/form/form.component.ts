@@ -5,6 +5,10 @@ import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { ToastrService } from 'ngx-toastr';
 import {MatDialog} from '@angular/material';
 import { LoaderHelper } from '../../../../utils/LoaderHelper';
+import { FileService } from 'src/app/services/File/file.service';
+import { Upload } from 'src/app/models/Upload';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-form',
@@ -25,11 +29,16 @@ export class FormComponent implements OnInit {
   };
   personalList: PersonalInterface[];
   private loaderHelper: LoaderHelper;
+  selectedFiles: FileList;
+  currentUpload: Upload;
+  uploadPercent: Observable<number>;
+  downloadURL: Observable<string>;
 
   constructor(
     private personalService: PersonalService,
     private toastr: ToastrService,
     private matDialog: MatDialog,
+    private fileService: FileService
   ) {
     this.loaderHelper = new LoaderHelper(this.matDialog);
    }
@@ -88,5 +97,22 @@ export class FormComponent implements OnInit {
       this.ourFile = files[0];
     }
     this.personal.imagen = this.ourFile.name;
+
+    const file = this.ourFile;
+    this.currentUpload = new Upload(file);
+    const task = this.fileService.pushUpload(this.currentUpload);
+
+        // observe percentage changes
+        this.uploadPercent = task.percentageChanges();
+        // get notified when the download URL is available
+        task.snapshotChanges().pipe(
+          finalize(() => {
+
+            this.personal.imagen = this.fileService.getFileRef().getDownloadURL().subscribe(result => {
+              this.personal.imagen = result;
+            });
+          })
+       )
+      .subscribe();
   }
 }
