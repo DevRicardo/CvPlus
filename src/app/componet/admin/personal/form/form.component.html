@@ -33,6 +33,12 @@
           </mat-select>
         </mat-form-field>-->
 
+        <mat-progress-bar
+          
+          [mode]="determinate"
+          [value]="uploadPercent | async">
+      </mat-progress-bar>
+
         <input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
         <button mat-stroked-button type="button" 
           color="primary" 
@@ -64,8 +70,7 @@
 
 
 <div class="actions" fxLayout="row" fxLayoutAlign="end center">
-    <div>porcentaje:{{ uploadPercent | async }}</div>
-    <a [href]="downloadURL | async">descsrgar {{ downloadURL | async }}</a>
+   <!-- <div>porcentaje:{{ uploadPercent | async }}</div> --> 
     <button mat-raised-button color="primary">
       <mat-icon class="material-icons">save</mat-icon>
       Guardar datos 

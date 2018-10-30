@@ -8,6 +8,7 @@ export class Upload {
 
     constructor(file: File) {
         this.file = file;
+        this.name = file.name;
     }
 
 }
