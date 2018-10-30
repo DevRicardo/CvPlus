@@ -52,6 +52,7 @@ import { FormComponent } from './componet/admin/personal/form/form.component';
 import { PersonalService } from './services/Personal/personal.service';
 import { FileService } from './services/File/file.service';
 import { LoaderComponent } from './componet/commons/loader/loader.component';
+import { FormPortadaComponent } from './componet/admin/portada/form-portada/form-portada.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { LoaderComponent } from './componet/commons/loader/loader.component';
     DashboardComponent,
     PersonalComponent,
     FormComponent,
+    FormPortadaComponent,
     LoaderComponent
   ],
   imports: [

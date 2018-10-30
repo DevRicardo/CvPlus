@@ -3,13 +3,27 @@
         <div fxLayout="row" fxLayout.xs="row" fxLayoutGap="0.9%" fxLayoutAlign="center center" class="container-admin">
             <mat-accordion fxFlex="80%">
 
+            <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Portada
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                
+                    <app-form-portada></app-form-portada>
+
+                </mat-expansion-panel>
+
                 <mat-expansion-panel>
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             Datos básicos
                         </mat-panel-title>
                         <mat-panel-description>
-                        Información básica del perfil
+                        
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                 
@@ -24,7 +38,7 @@
                             Habilidades
                         </mat-panel-title>
                         <mat-panel-description>
-                        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                        
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <p>I'm visible because I am open</p>
