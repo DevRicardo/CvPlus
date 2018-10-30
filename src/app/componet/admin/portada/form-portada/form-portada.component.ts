@@ -19,6 +19,7 @@ export class FormPortadaComponent implements OnInit {
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
   portada: string;
+  enablePreeview: boolean;
 
   constructor(
     private matDialog: MatDialog,
@@ -27,6 +28,7 @@ export class FormPortadaComponent implements OnInit {
 
   ngOnInit() {
     this.portada = '';
+    this.enablePreeview = true;
   }
 
 

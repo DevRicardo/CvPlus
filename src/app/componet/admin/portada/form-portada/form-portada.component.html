@@ -1,25 +1,38 @@
-<div fxFlex class="example-container">
-  
-  <!--<mat-progress-bar
-          
-[mode]="determinate"
-[value]="uploadPercent | async">
-</mat-progress-bar>-->
+<div fxLayout="column" fxLayout.xs="column" fxLayoutGap="0.9%" >
 
-<input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
-
-<button mat-stroked-button type="button" 
-color="primary" 
-id="uploadButton" 
-class="md-raised md-primary margin-button" 
-aria-label="attach_file"
-(click)="openInput()">
-<mat-icon class="material-icons">attach_file</mat-icon>
-Seleccione imagen 
-</button>
+  <div fxFlex class="example-container">
     
-<mat-form-field>
-  <input [(ngModel)]="portada" name="portada" matInput placeholder="Imagen no seleccionada" readonly="readonly">
-</mat-form-field>
+  <mat-progress-bar            
+  [mode]="determinate"
+  [value]="uploadPercent | async">
+  </mat-progress-bar>
 
+  <input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
+
+  <button mat-stroked-button type="button" 
+  color="primary" 
+  id="uploadButton" 
+  class="md-raised md-primary margin-button" 
+  aria-label="attach_file"
+  (click)="openInput()">
+  <mat-icon class="material-icons">attach_file</mat-icon>
+  Seleccione imagen 
+  </button>
+      
+  <mat-form-field style="display:none;">
+    <input [(ngModel)]="portada" name="portada" matInput placeholder="Imagen no seleccionada" readonly="readonly">
+  </mat-form-field>
+
+  </div>
+
+  <div fxFlex class="example-container">
+    <img [src]="portada" class="preeview_portada" *ngIf="enablePreeview">
+  </div>
+</div>
+<div class="actions" fxLayout="row" fxLayoutAlign="end center">
+  <!-- <div>porcentaje:{{ uploadPercent | async }}</div> --> 
+   <button mat-raised-button color="primary">
+     <mat-icon class="material-icons">save</mat-icon>
+     Guardar datos 
+   </button>
 </div>
