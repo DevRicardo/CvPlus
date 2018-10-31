@@ -1,9 +1,9 @@
+<form (ngSubmit)="onGuardarPortada(FormPortada)" name="FormPortada" #FormPortada="ngForm">
 <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="0.9%" >
 
   <div fxFlex class="example-container">
     
-  <mat-progress-bar            
-  [mode]="determinate"
+  <mat-progress-bar
   [value]="uploadPercent | async">
   </mat-progress-bar>
 
@@ -20,13 +20,13 @@
   </button>
       
   <mat-form-field style="display:none;">
-    <input [(ngModel)]="portada" name="portada" matInput placeholder="Imagen no seleccionada" readonly="readonly">
+    <input [(ngModel)]="portada.imagen" name="portada" matInput placeholder="Imagen no seleccionada" readonly="readonly">
   </mat-form-field>
 
   </div>
 
   <div fxFlex class="example-container">
-    <img [src]="portada" class="preeview_portada" *ngIf="enablePreeview">
+    <img [src]="portada.imagen" class="preeview_portada" *ngIf="enablePreeview">
   </div>
 </div>
 <div class="actions" fxLayout="row" fxLayoutAlign="end center">
@@ -36,3 +36,5 @@
      Guardar datos 
    </button>
 </div>
+
+</form>
