@@ -53,6 +53,9 @@ import { PersonalService } from './services/Personal/personal.service';
 import { FileService } from './services/File/file.service';
 import { LoaderComponent } from './componet/commons/loader/loader.component';
 import { FormPortadaComponent } from './componet/admin/portada/form-portada/form-portada.component';
+import { FormHabilidadComponent } from './componet/admin/habilidades/form-habilidad/form-habilidad.component';
+import { ItemHabilidadComponent } from './componet/admin/habilidades/item-habilidad/item-habilidad.component';
+import { SectionHabilidadComponent } from './componet/admin/habilidades/section-habilidad/section-habilidad.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { FormPortadaComponent } from './componet/admin/portada/form-portada/form
     PersonalComponent,
     FormComponent,
     FormPortadaComponent,
-    LoaderComponent
+    LoaderComponent,
+    FormHabilidadComponent,
+    ItemHabilidadComponent,
+    SectionHabilidadComponent
   ],
   imports: [
     BrowserModule,

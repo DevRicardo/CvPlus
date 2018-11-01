@@ -111,19 +111,3 @@
   flex-shrink: 0;
 }
 
-
-.skills-padding{
-  padding: 10px;
-}
-
-.img-icon{
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  line-height: 3;
-}
-
-.item-tecnologia{
-  min-width: 48%;
-  margin: 10px;
-}
