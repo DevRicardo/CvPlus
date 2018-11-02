@@ -20,7 +20,7 @@ export class FormPortadaComponent implements OnInit {
   ourFile: File; // hold our file
   selectedFiles: FileList;
   currentUpload: Upload;
-  uploadPercent: Observable<number>;
+  uploadPercentPortada: Observable<number>;
   downloadURL: Observable<string>;
   portada: PortadaInterface = {
     imagen: ''
@@ -83,10 +83,10 @@ export class FormPortadaComponent implements OnInit {
 
   openInput() {
     // your can use ElementRef for this later
-    document.getElementById('fileInput').click();
+    document.getElementById('fileInputPortada').click();
   }
 
-  fileChange(files: File[]) {
+  fileChangePortada(files: File[]) {
     if (files.length > 0) {
       this.ourFile = files[0];
     }
@@ -97,7 +97,7 @@ export class FormPortadaComponent implements OnInit {
     const task = this.fileService.pushUpload(this.currentUpload);
 
         // observe percentage changes
-        this.uploadPercent = task.percentageChanges();
+        this.uploadPercentPortada = task.percentageChanges();
         // get notified when the download URL is available
         task.snapshotChanges().pipe(
           finalize(() => {

@@ -4,10 +4,10 @@
   <div fxFlex class="example-container">
     
   <mat-progress-bar
-  [value]="uploadPercent | async">
+  [value]="uploadPercentPortada | async">
   </mat-progress-bar>
 
-  <input id="fileInput" (change)="fileChange($event.target.files)" type="file" fxHide="true"> 
+  <input id="fileInputPortada" (change)="fileChangePortada($event.target.files)" type="file" fxHide="true"> 
 
   <button mat-stroked-button type="button" 
   color="primary" 
