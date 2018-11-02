@@ -24,7 +24,8 @@ import {
   MatTooltipModule,
   MatExpansionModule,
   MatSelectModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatTableModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -101,6 +102,7 @@ import { SectionHabilidadComponent } from './componet/admin/habilidades/section-
     MatSelectModule,
     MatProgressSpinnerModule,
     AngularFireStorageModule,
+    MatTableModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
