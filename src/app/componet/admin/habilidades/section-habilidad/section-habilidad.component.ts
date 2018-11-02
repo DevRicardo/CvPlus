@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HabilidadInterface } from 'src/app/models/HabilidadInterface';
+import { HabilidadService } from 'src/app/services/Habilidad/habilidad.service';
 
 @Component({
   selector: 'app-section-habilidad',
@@ -8,8 +9,6 @@ import { HabilidadInterface } from 'src/app/models/HabilidadInterface';
 })
 export class SectionHabilidadComponent implements OnInit {
 
-  color = 'warn';
-  mode = 'determinate';
   bufferValue = 0;
   demo: HabilidadInterface[] = [];
   habilidades: HabilidadInterface[] = [];
@@ -18,13 +17,18 @@ export class SectionHabilidadComponent implements OnInit {
     value: 0,
     descripcion: ''
   };
-  constructor() {
-    this.habilidades.push(this.itemHabilidad);
-    console.log(this.demo);
+  constructor(
+    private habilidadService: HabilidadService
+    ) {}
+
+  initDataFirebase() {
+    this.habilidadService.get().subscribe(habilidad => {
+      this.habilidades = habilidad;
+    });
   }
 
   ngOnInit() {
-    console.log(this.habilidades);
+    this.initDataFirebase();
   }
 
 }

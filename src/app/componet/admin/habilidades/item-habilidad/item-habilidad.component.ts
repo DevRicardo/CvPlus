@@ -10,6 +10,8 @@ export class ItemHabilidadComponent implements OnInit {
 
   @Input() public habilidad: HabilidadInterface;
 
+  color = 'warn';
+  mode = 'determinate';
   constructor() { }
 
   ngOnInit() {

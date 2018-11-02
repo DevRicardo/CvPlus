@@ -107,7 +107,6 @@ export class FormComponent implements OnInit {
         // get notified when the download URL is available
         task.snapshotChanges().pipe(
           finalize(() => {
-
             this.personal.imagen = this.fileService.getFileRef().getDownloadURL().subscribe(result => {
               this.personal.imagen = result;
             });
