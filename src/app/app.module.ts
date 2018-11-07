@@ -25,7 +25,9 @@ import {
   MatExpansionModule,
   MatSelectModule,
   MatProgressSpinnerModule,
-  MatTableModule
+  MatTableModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -57,6 +59,9 @@ import { FormPortadaComponent } from './componet/admin/portada/form-portada/form
 import { FormHabilidadComponent } from './componet/admin/habilidades/form-habilidad/form-habilidad.component';
 import { ItemHabilidadComponent } from './componet/admin/habilidades/item-habilidad/item-habilidad.component';
 import { SectionHabilidadComponent } from './componet/admin/habilidades/section-habilidad/section-habilidad.component';
+import { SectionEstudioComponent } from './componet/admin/estudios/section-estudio/section-estudio.component';
+import { ItemEstudioComponent } from './componet/admin/estudios/item-estudio/item-estudio.component';
+import { FormEstudioComponent } from './componet/admin/estudios/form-estudio/form-estudio.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +78,10 @@ import { SectionHabilidadComponent } from './componet/admin/habilidades/section-
     LoaderComponent,
     FormHabilidadComponent,
     ItemHabilidadComponent,
-    SectionHabilidadComponent
+    SectionHabilidadComponent,
+    SectionEstudioComponent,
+    ItemEstudioComponent,
+    FormEstudioComponent
   ],
   imports: [
     BrowserModule,
@@ -103,6 +111,8 @@ import { SectionHabilidadComponent } from './componet/admin/habilidades/section-
     MatProgressSpinnerModule,
     AngularFireStorageModule,
     MatTableModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,

@@ -11,12 +11,6 @@ import { HabilidadService } from 'src/app/services/Habilidad/habilidad.service';
 import { NgForm } from '@angular/forms';
 
 
-const ELEMENT_DATA: HabilidadInterface[] = [
-  {imagen: '', nombre: 'Hydrogen', value: 0, descripcion: ''}
-];
-
-
-
 @Component({
   selector: 'app-form-habilidad',
   templateUrl: './form-habilidad.component.html',
