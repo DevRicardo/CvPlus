@@ -1,7 +1,7 @@
-<form (ngSubmit)="onGuardarEstudio(FormEstudio)" name="FormEstudio" #FormEstudio="ngForm">
+<form (ngSubmit)="onActionForm(FormEstudio)" name="FormEstudio" #FormEstudio="ngForm">
   <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="0.9%"  fxLayoutAlign="center center">
    
-    <div fxFlex="60%" class="example-container">
+    <div fxFlex class="example-container">
 
         <mat-form-field>
           <input matInput [(ngModel)]="estudio.institucion" #institucion="ngModel" name="institucion" placeholder="Institución">
@@ -15,28 +15,30 @@
           <input matInput [(ngModel)]="estudio.soporte" #soporte="ngModel" name="soporte" placeholder="Soporte">
         </mat-form-field>
 
-        <mat-form-field>
-
-          <input matInput [matDatepicker]="picker" [(ngModel)]="estudio.inicio" #inicio="ngModel" name="inicio" placeholder="Inicio">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+       
         
-        </mat-form-field>
+          <mat-form-field >
 
-        <mat-form-field>  
+            <input matInput readonly [matDatepicker]="picker" [(ngModel)]="estudio.inicio" #inicio="ngModel" name="inicio" placeholder="Inicio">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           
-          <input matInput [matDatepicker]="pickerFin" [(ngModel)]="estudio.fin" #fin="ngModel" name="fin" placeholder="Fin">
-          <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
-          <mat-datepicker #pickerFin></mat-datepicker>
+          </mat-form-field>
 
-        </mat-form-field>
+          <mat-form-field >  
+            
+            <input matInput readonly [matDatepicker]="pickerFin" [(ngModel)]="estudio.fin" #fin="ngModel" name="fin" placeholder="Fin">
+            <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFin></mat-datepicker>
 
+          </mat-form-field>
+    
       
         <mat-checkbox [(ngModel)]="estudio.actual"  #actual="ngModel" name="actual" >Estudiando actualmente</mat-checkbox>
-    
+        
   
   
-          <mat-progress-bar
+        <mat-progress-bar
             [value]="uploadPercentEstudio | async">
         </mat-progress-bar>
   
@@ -55,67 +57,66 @@
               <input [(ngModel)]="estudio.imagen" #imagen="ngModel" name="imagen" matInput placeholder="Imagen no seleccionada" readonly="readonly">
           </mat-form-field>
 
-          <div fxLayout="row" fxLayoutAlign="end">            
-          <button mat-raised-button color="primary" >
-              <mat-icon class="material-icons">save</mat-icon>
-              Guardar datos 
-          </button>
+          <div fxLayout="row" fxLayoutAlign="end">   
+
+              <button mat-raised-button color="primary" >
+                  <mat-icon class="material-icons">save</mat-icon>
+                  Guardar datos 
+              </button>
+
+              <button type="button" (click)="resetForm(FormEstudio)" mat-stroked-button color="warn" >
+                <mat-icon class="material-icons">clear</mat-icon>
+                Cancelar 
+              </button>
+
+
           </div>
   
     </div>
 
   </div>
-
-  <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="0.9%"  fxLayoutAlign="center center">
-
-
-    <div fxFlex class="example-container">
-
-      <table mat-table [dataSource]="habilidades" class="mat-elevation-z8">
-
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-          <!-- Position Column -->
-          <ng-container matColumnDef="Imagen">
-            <th mat-header-cell *matHeaderCellDef> Imagen</th>
-            <td mat-cell *matCellDef="let element">
-               <img [src]="element.imagen" width="50">
-              </td>
-          </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="Nombre">
-            <th mat-header-cell *matHeaderCellDef> Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
-          </ng-container>
-        
-          <!-- Weight Column -->
-          <ng-container matColumnDef="Valor">
-            <th mat-header-cell *matHeaderCellDef> Valor </th>
-            <td mat-cell *matCellDef="let element"> {{element.value}}%</td>
-          </ng-container>
-        
-          
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        
-        
-    </div>
-    
-  
- 
-  </div>
-  
-  
-  <div class="actions" fxLayout="row" fxLayoutAlign="end center">
-     <!-- <div>porcentaje:{{ uploadPercent | async }}</div> --> 
-  
-  </div>
   
   
   </form>
+
+  <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="0.9%" >
+
+  <table mat-table [dataSource]="estudios" class="mat-elevation-z8" class="table-full">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
   
+    <!-- Position Column -->
+    <ng-container matColumnDef="Imagen">
+      <th mat-header-cell *matHeaderCellDef> Imagen</th>
+      <td mat-cell *matCellDef="let element">
+         <img [src]="element.imagen" width="50">
+        </td>
+    </ng-container>
   
+    <!-- Name Column -->
+    <ng-container matColumnDef="Institución">
+      <th mat-header-cell *matHeaderCellDef> Institución </th>
+      <td mat-cell *matCellDef="let element"> {{element.institucion}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Titulo">
+      <th mat-header-cell *matHeaderCellDef> Titulo </th>
+      <td mat-cell *matCellDef="let element"> {{element.titulo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Opciones">
+      <th mat-header-cell *matHeaderCellDef> Opciones </th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="onEdit(element)" mat-button color="primary">Editar</button>
+        <button mat-button color="warn">Eliminar</button>
+      </td>
+    </ng-container>  
+    
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+</div> 

@@ -5,7 +5,7 @@ export interface EstudioInterface {
     imagen?: string;
     titulo?: string;
     soporte?: string;
-    inicio?: Date;
-    fin?: Date;
+    inicio?: any;
+    fin?: any;
     actual?: boolean;
 }
