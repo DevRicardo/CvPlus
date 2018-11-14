@@ -94,6 +94,7 @@ export class FormEstudioComponent implements OnInit {
     this.create = false;
     let inicio: any;
     let fin: any;
+    let studioTemp: EstudioInterface;
     try {
         inicio = estudio.inicio.toDate();
     } catch (e) {
@@ -107,7 +108,8 @@ export class FormEstudioComponent implements OnInit {
     }
     estudio.inicio = inicio;
     estudio.fin = fin;
-    this.estudio = estudio;
+    studioTemp = Object.assign(estudio);
+    this.estudio = studioTemp;
   }
 
   onUpdate(form: NgForm) {
