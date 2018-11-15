@@ -62,6 +62,7 @@ import { SectionHabilidadComponent } from './componet/admin/habilidades/section-
 import { SectionEstudioComponent } from './componet/admin/estudios/section-estudio/section-estudio.component';
 import { ItemEstudioComponent } from './componet/admin/estudios/item-estudio/item-estudio.component';
 import { FormEstudioComponent } from './componet/admin/estudios/form-estudio/form-estudio.component';
+import { ConfirmComponent } from './componet/commons/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { FormEstudioComponent } from './componet/admin/estudios/form-estudio/for
     SectionHabilidadComponent,
     SectionEstudioComponent,
     ItemEstudioComponent,
-    FormEstudioComponent
+    FormEstudioComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -135,7 +137,8 @@ import { FormEstudioComponent } from './componet/admin/estudios/form-estudio/for
   ],
   entryComponents: [
     LoginComponent,
-    LoaderComponent
+    LoaderComponent,
+    ConfirmComponent
   ],
   providers: [LoginService, AuthGuard, PersonalService, FileService],
   bootstrap: [AppComponent]

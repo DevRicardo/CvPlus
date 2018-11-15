@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
 import { EstudioInterface } from 'src/app/models/EstudioInterface';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { EstudioService } from 'src/app/services/Estudio/estudio.service';
 import { ToastrService } from 'ngx-toastr';
-import { MatDialog } from '@angular/material';
 import { FileService } from 'src/app/services/File/file.service';
 import { LoaderHelper } from 'src/app/utils/LoaderHelper';
 import { Upload } from 'src/app/models/Upload';
 import { finalize } from 'rxjs/operators';
+import { ConfirmComponent } from 'src/app/componet/commons/confirm/confirm.component';
 
 @Component({
   selector: 'app-form-estudio',
@@ -129,6 +130,35 @@ export class FormEstudioComponent implements OnInit {
 
   resetForm(form: NgForm) {
     form.reset();
+  }
+
+
+  onDelete(estudio: EstudioInterface) {
+
+    const dialogRef = this.matDialog.open(ConfirmComponent, {
+      data: {state: false, message: '¿Esta seguro de eliminar el estudio?'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if ( result.state ) {
+        this.delete(estudio);
+      }
+    });
+
+  }
+
+  delete(estudio: EstudioInterface) {
+    this.loaderHelper.openLoader();
+    this.estudioService.delete(estudio).then(
+      (success) => {
+        this.loaderHelper.closeLoader();
+        this.toastr.success('Se eliminó correctamente', 'OK');
+      },
+      (error) => {
+        this.loaderHelper.closeLoader();
+        this.toastr.error('No se pudo eliminar la información', 'Error');
+      }
+    );
   }
 
 

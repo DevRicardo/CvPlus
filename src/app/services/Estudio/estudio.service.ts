@@ -37,4 +37,9 @@ export class EstudioService {
     return this.estudioDocument.update(estudio);
 
   }
+
+  delete(estudio: EstudioInterface) {
+    this.estudioDocument = this.afs.doc(`/estudios/${estudio.id}`);
+    return this.estudioDocument.delete();
+  }
 }
