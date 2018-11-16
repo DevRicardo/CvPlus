@@ -134,7 +134,6 @@ export class FormEstudioComponent implements OnInit {
 
 
   onDelete(estudio: EstudioInterface) {
-
     const dialogRef = this.matDialog.open(ConfirmComponent, {
       data: {state: false, message: '¿Esta seguro de eliminar el estudio?'}
     });

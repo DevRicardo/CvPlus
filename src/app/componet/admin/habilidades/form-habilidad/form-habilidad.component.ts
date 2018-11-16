@@ -9,6 +9,7 @@ import { Upload } from 'src/app/models/Upload';
 import { finalize } from 'rxjs/operators';
 import { HabilidadService } from 'src/app/services/Habilidad/habilidad.service';
 import { NgForm } from '@angular/forms';
+import { ConfirmComponent } from 'src/app/componet/commons/confirm/confirm.component';
 
 
 @Component({
@@ -107,8 +108,34 @@ export class FormHabilidadComponent implements OnInit {
     );
   }
 
+  onDelete(habilidad: HabilidadInterface) {
+    const dialogRef = this.matDialog.open(ConfirmComponent, {
+      data: {state: false, message: '¿Esta seguro de eliminar el habilidad?'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if ( result.state ) {
+        this.delete(habilidad);
+      }
+    });
+  }
+
+  delete(habilidad: HabilidadInterface) {
+    this.loaderHelper.openLoader();
+    this.habilidadService.delete(habilidad).then(
+      (success) => {
+        this.loaderHelper.closeLoader();
+        this.toastr.success('Se eliminó correctamente', 'OK');
+      },
+      (error) => {
+        this.loaderHelper.closeLoader();
+        this.toastr.error('No se pudo eliminar la información', 'Error');
+      }
+    );
+  }
+
+
   openInput() {
-    // your can use ElementRef for this later
     document.getElementById('fileInputHabilidad').click();
   }
 
@@ -117,11 +144,9 @@ export class FormHabilidadComponent implements OnInit {
       this.ourFile = files[0];
     }
     this.habilidad.imagen = this.ourFile.name;
-
     const file = this.ourFile;
     this.currentUpload = new Upload(file);
     const task = this.fileService.pushUpload(this.currentUpload);
-
         // observe percentage changes
         this.uploadPercentHabilidad = task.percentageChanges();
         // get notified when the download URL is available
@@ -134,5 +159,4 @@ export class FormHabilidadComponent implements OnInit {
        )
       .subscribe();
   }
-
 }

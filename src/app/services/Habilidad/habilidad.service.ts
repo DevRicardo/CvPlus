@@ -36,6 +36,10 @@ export class HabilidadService {
   update(habilidad: HabilidadInterface) {
     this.habilidadDocument = this.afs.doc(`/habilidades/${habilidad.id}`);
     return this.habilidadDocument.update(habilidad);
+  }
 
+  delete(habilidad: HabilidadInterface) {
+    this.habilidadDocument = this.afs.doc(`/habilidades/${habilidad.id}`);
+    return this.habilidadDocument.delete();
   }
 }
