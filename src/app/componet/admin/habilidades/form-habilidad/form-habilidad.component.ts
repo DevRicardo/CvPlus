@@ -18,7 +18,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormHabilidadComponent implements OnInit {
 
-  displayedColumns: string[] = ['Imagen', 'Nombre', 'Valor'];
+  displayedColumns: string[] = ['Imagen', 'Nombre', 'Valor', 'Opciones'];
 
   ourFile: File; // hold our file
   habilidad: HabilidadInterface = {
@@ -32,6 +32,7 @@ export class FormHabilidadComponent implements OnInit {
   currentUpload: Upload;
   downloadURL: Observable<string>;
   habilidades: HabilidadInterface[];
+  create: boolean;
 
   constructor(
     private toastr: ToastrService,
@@ -40,6 +41,7 @@ export class FormHabilidadComponent implements OnInit {
     private habilidadService: HabilidadService
     ) {
       this.loaderHelper = new LoaderHelper(this.matDialog);
+      this.create = true;
     }
 
   ngOnInit() {
@@ -50,6 +52,19 @@ export class FormHabilidadComponent implements OnInit {
     this.habilidadService.get().subscribe(habilidad => {
       this.habilidades = habilidad;
     });
+  }
+
+  onActionForm(form: NgForm) {
+    if ( this.create ) {
+      this.onGuardarHabilidad(form);
+    } else {
+      this.onUpdate(form);
+      this.create = true;
+    }
+  }
+
+  resetForm(form: NgForm) {
+    form.reset();
   }
 
   onGuardarHabilidad(form: NgForm) {
@@ -64,6 +79,30 @@ export class FormHabilidadComponent implements OnInit {
       (error) => {
         this.loaderHelper.closeLoader();
         this.toastr.error('No se pudo guardar la información', 'Error');
+      }
+    );
+  }
+
+
+  onEdit(habilidad: HabilidadInterface) {
+    this.create = false;
+    this.habilidad = null;
+    let habilidadTemp: HabilidadInterface;
+    habilidadTemp = Object.assign({}, habilidad);
+    this.habilidad = habilidadTemp;
+  }
+
+  onUpdate(form: NgForm) {
+    this.loaderHelper.openLoader();
+    this.habilidadService.update(this.habilidad).then(
+      (success) => {
+        this.loaderHelper.closeLoader();
+        this.toastr.success('Se actualizo correctamente', 'OK');
+        form.reset();
+      },
+      (error) => {
+        this.loaderHelper.closeLoader();
+        this.toastr.error('No se pudo actualizar la información', 'Error');
       }
     );
   }

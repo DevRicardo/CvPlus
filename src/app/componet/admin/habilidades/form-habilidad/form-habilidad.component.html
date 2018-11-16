@@ -1,8 +1,8 @@
-<form (ngSubmit)="onGuardarHabilidad(FormHabilidad)" name="FormHabilidad" #FormHabilidad="ngForm">
+
   <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.9%" >
    
-    <div fxFlex="50%" class="example-container">
-
+    <div fxFlex="50%" >
+        <form (ngSubmit)="onActionForm(FormHabilidad)" name="FormHabilidad" #FormHabilidad="ngForm" class="example-container">
         <mat-form-field>
             <input matInput [(ngModel)]="habilidad.nombre" #nombre="ngModel" name="nombre" placeholder="Nombre">
           </mat-form-field>
@@ -39,6 +39,12 @@
               <mat-icon class="material-icons">save</mat-icon>
               Guardar datos 
           </button>
+          <button type="button" (click)="resetForm(FormHabilidad)" mat-button color="warn">
+              <mat-icon class="material-icons">clear</mat-icon>
+              Cancelar 
+          </button>
+            
+  </form>
   
     </div>
 
@@ -69,7 +75,18 @@
             <th mat-header-cell *matHeaderCellDef> Valor </th>
             <td mat-cell *matCellDef="let element"> {{element.value}}%</td>
           </ng-container>
-        
+
+          <ng-container matColumnDef="Opciones">
+            <th mat-header-cell *matHeaderCellDef> Opciones </th>
+            <td mat-cell *matCellDef="let element">
+              <button  mat-button color="primary" (click)="onEdit(element)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button  mat-button color="warn">
+                  <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>        
           
         
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -89,7 +106,6 @@
   
   </div>
   
-  
-  </form>
+
   
   

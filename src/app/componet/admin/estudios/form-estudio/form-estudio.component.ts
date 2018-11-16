@@ -109,7 +109,7 @@ export class FormEstudioComponent implements OnInit {
     }
     estudio.inicio = inicio;
     estudio.fin = fin;
-    studioTemp = Object.assign(estudio);
+    studioTemp = Object.assign({}, estudio);
     this.estudio = studioTemp;
   }
 
