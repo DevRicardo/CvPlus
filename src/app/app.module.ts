@@ -63,6 +63,9 @@ import { SectionEstudioComponent } from './componet/admin/estudios/section-estud
 import { ItemEstudioComponent } from './componet/admin/estudios/item-estudio/item-estudio.component';
 import { FormEstudioComponent } from './componet/admin/estudios/form-estudio/form-estudio.component';
 import { ConfirmComponent } from './componet/commons/confirm/confirm.component';
+import { FormExperienciaComponent } from './componet/admin/experiecia/form-experiencia/form-experiencia.component';
+import { ItemExperienciaComponent } from './componet/admin/experiecia/item-experiencia/item-experiencia.component';
+import { SectionExperienciaComponent } from './componet/admin/experiecia/section-experiencia/section-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +86,10 @@ import { ConfirmComponent } from './componet/commons/confirm/confirm.component';
     SectionEstudioComponent,
     ItemEstudioComponent,
     FormEstudioComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    FormExperienciaComponent,
+    ItemExperienciaComponent,
+    SectionExperienciaComponent
   ],
   imports: [
     BrowserModule,

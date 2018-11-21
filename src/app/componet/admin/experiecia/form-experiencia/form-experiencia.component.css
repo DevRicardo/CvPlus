@@ -1,0 +1,12 @@
+.example-container > * {
+    width: 100%;
+}
+
+.example-container-none > * {
+    width:auto !important;
+}
+
+.table-full{
+    width: 100%;
+}
+
