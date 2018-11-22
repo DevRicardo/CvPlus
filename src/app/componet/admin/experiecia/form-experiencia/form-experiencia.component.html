@@ -75,7 +75,7 @@
 
   <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="0.9%" >
 
-  <!--<table mat-table [dataSource]="experiencias" class="mat-elevation-z8" class="table-full">
+  <table mat-table [dataSource]="experiencias" class="mat-elevation-z8" class="table-full">
 
  
     <ng-container matColumnDef="Imagen">
@@ -86,15 +86,25 @@
     </ng-container>
   
     
-    <ng-container matColumnDef="Institución">
-      <th mat-header-cell *matHeaderCellDef> Institución </th>
-      <td mat-cell *matCellDef="let element"> {{element.institucion}} </td>
+    <ng-container matColumnDef="Empresa">
+      <th mat-header-cell *matHeaderCellDef> Empresa </th>
+      <td mat-cell *matCellDef="let element"> {{element.empresa}} </td>
     </ng-container>
   
     
-    <ng-container matColumnDef="Titulo">
-      <th mat-header-cell *matHeaderCellDef> Titulo </th>
-      <td mat-cell *matCellDef="let element"> {{element.titulo}}</td>
+    <ng-container matColumnDef="Funciones">
+      <th mat-header-cell *matHeaderCellDef> Funciones </th>
+      <td mat-cell *matCellDef="let element"> {{element.detalles}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Inicio">
+      <th mat-header-cell *matHeaderCellDef> Inicio </th>
+      <td mat-cell *matCellDef="let element"> {{element.inicio.toDate() | date: 'medium' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Fin">
+      <th mat-header-cell *matHeaderCellDef> Fin </th>
+      <td mat-cell *matCellDef="let element"> {{element.fin.toDate() | date: 'medium'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="Opciones">
@@ -112,6 +122,6 @@
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table> -->
+  </table> 
   
 </div> 

@@ -12,7 +12,7 @@ import { State } from '../../store/State';
 })
 export class NavbarComponent {
 
-  version: '0.50.1';
+  version: string;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -21,5 +21,7 @@ export class NavbarComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private loginService: LoginService) { }
+    private loginService: LoginService) {
+      this.version = '0.80.1';
+    }
 }

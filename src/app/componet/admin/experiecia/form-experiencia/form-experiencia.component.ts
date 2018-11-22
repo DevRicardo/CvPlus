@@ -181,4 +181,8 @@ export class FormExperienciaComponent implements OnInit {
       .subscribe();
   }
 
+  formatDate(timestam: any) {
+    return new Date(timestam);
+  }
+
 }
