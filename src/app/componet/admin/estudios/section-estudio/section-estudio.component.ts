@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EstudioInterface } from 'src/app/models/EstudioInterface';
+import { EstudioService } from 'src/app/services/Estudio/estudio.service';
 
 @Component({
   selector: 'app-section-estudio',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionEstudioComponent implements OnInit {
 
-  constructor() { }
+
+  estudios: EstudioInterface[] = [];
+  estudio: EstudioInterface = {
+    institucion: '',
+    imagen: '',
+    titulo: '',
+    soporte: '',
+    inicio: '',
+    fin: '',
+    actual: true,
+  };
+
+  constructor(
+    private estudioService: EstudioService
+  ) { }
 
   ngOnInit() {
+    this.initDataFirebase();
+  }
+
+  initDataFirebase() {
+    this.estudioService.get().subscribe(estudio => {
+      this.estudios = estudio;
+    });
   }
 
 }

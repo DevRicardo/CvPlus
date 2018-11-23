@@ -1,3 +1,4 @@
-<p>
-  section-estudio works!
-</p>
+<h3 class="titulo">ESTUDIOS</h3>
+<div fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"  fxLayoutGap="0.9% " >
+    <app-item-estudio *ngFor="let estudio of estudios" [estudio]="estudio"></app-item-estudio>
+</div>

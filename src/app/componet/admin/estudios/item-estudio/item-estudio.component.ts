@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { EstudioInterface } from 'src/app/models/EstudioInterface';
 
 @Component({
   selector: 'app-item-estudio',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-estudio.component.css']
 })
 export class ItemEstudioComponent implements OnInit {
+
+  @Input() public estudio: EstudioInterface;
 
   constructor() { }
 
