@@ -1,6 +1,9 @@
 <div>
+    <a mat-list-item href="#"><mat-chip color="accent" selected>En construcción</mat-chip></a>
+    <a mat-list-item routerLink="/home">Portada</a>
+    <a *ngIf="isLogin" mat-list-item routerLink="/dashboard">Tablero</a>
   <a mat-list-item routerLink="/blog">Blog</a>
-  <a mat-list-item routerLink="/hv">Hoja de vida</a>
+  <!--<a mat-list-item routerLink="/hv">Hoja de vida</a>-->
   <a (click)="openFormLogin()" *ngIf="!isLogin" mat-list-item >Ingreso</a>
   <a (click)="singOut()" *ngIf="isLogin" mat-list-item >Salir</a>
 </div>

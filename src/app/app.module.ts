@@ -27,7 +27,9 @@ import {
   MatProgressSpinnerModule,
   MatTableModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatBadgeModule,
+  MatChipsModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
@@ -121,6 +123,8 @@ import { SectionExperienciaComponent } from './componet/admin/experiecia/section
     MatTableModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    MatBadgeModule,
+    MatChipsModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
