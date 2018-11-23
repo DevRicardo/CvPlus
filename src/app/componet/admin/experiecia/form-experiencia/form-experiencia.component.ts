@@ -21,8 +21,9 @@ export class FormExperienciaComponent implements OnInit {
 
   ourFile: File; // hold our file
   experiencia: ExperienciaInterface = {
-    empresa: '',
     imagen: '',
+    empresa: '',
+    cargo: '',
     detalles: '',
     inicio: new Date(),
     fin: new Date(),
@@ -34,7 +35,7 @@ export class FormExperienciaComponent implements OnInit {
   currentUpload: Upload;
   downloadURL: Observable<string>;
   experiencias: ExperienciaInterface[];
-  displayedColumns: string[] = ['Imagen', 'Empresa', 'Funciones', 'Inicio', 'Fin', 'Opciones'];
+  displayedColumns: string[] = ['Imagen', 'Empresa', 'Cargo', 'Inicio', 'Fin', 'Opciones'];
   dateNow: Date;
   create = true;
 

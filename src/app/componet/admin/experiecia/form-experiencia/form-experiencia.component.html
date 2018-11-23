@@ -6,6 +6,10 @@
         <mat-form-field>
           <input matInput [(ngModel)]="experiencia.empresa" #empresa="ngModel" name="empresa" placeholder="Empresa">
         </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="experiencia.cargo" #cargo="ngModel" name="cargo" placeholder="Cargo">
+        </mat-form-field>
         
         <mat-form-field>
           <textarea matInput [(ngModel)]="experiencia.detalles" #detalles="ngModel" name="detalles" placeholder="Funciones"></textarea>
@@ -90,12 +94,12 @@
       <th mat-header-cell *matHeaderCellDef> Empresa </th>
       <td mat-cell *matCellDef="let element"> {{element.empresa}} </td>
     </ng-container>
-  
-    
-    <ng-container matColumnDef="Funciones">
-      <th mat-header-cell *matHeaderCellDef> Funciones </th>
-      <td mat-cell *matCellDef="let element"> {{element.detalles}}</td>
+
+    <ng-container matColumnDef="Cargo">
+      <th mat-header-cell *matHeaderCellDef> Cargo </th>
+      <td mat-cell *matCellDef="let element"> {{element.cargo}} </td>
     </ng-container>
+  
 
     <ng-container matColumnDef="Inicio">
       <th mat-header-cell *matHeaderCellDef> Inicio </th>
