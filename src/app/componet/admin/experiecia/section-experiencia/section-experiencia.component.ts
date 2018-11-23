@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExperienciaInterface } from 'src/app/models/ExperienciaInterface';
+import { ExperienciaService } from 'src/app/services/Experiencia/experiencia.service';
 
 @Component({
   selector: 'app-section-experiencia',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionExperienciaComponent implements OnInit {
 
-  constructor() { }
+  experiencias: ExperienciaInterface[];
+
+
+  constructor(
+    private experienciaService: ExperienciaService
+  ) { }
 
   ngOnInit() {
+    this.initDataFirebase();
   }
+
+  initDataFirebase() {
+    this.experienciaService.get().subscribe(experiencia => {
+      this.experiencias = experiencia;
+    });
+  }
+
+
 
 }

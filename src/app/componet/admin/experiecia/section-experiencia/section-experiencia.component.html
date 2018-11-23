@@ -1,3 +1,6 @@
-<p>
-  section-experiencia works!
-</p>
+<h3 class="titulo">EXPERIENCIA LABORAL</h3>
+<div fxLayout="row wrap" fxLayout.sm="column" fxLayout.xs="column"  fxLayoutGap="0.9%">
+
+    <app-item-experiencia *ngFor="let experiencia of experiencias" [experiencia]="experiencia"></app-item-experiencia>            
+
+</div>
