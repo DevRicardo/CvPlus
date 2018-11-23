@@ -22,6 +22,6 @@ export class NavbarComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private loginService: LoginService) {
-      this.version = '0.80.1';
+      this.version = '1.0.0';
     }
 }
