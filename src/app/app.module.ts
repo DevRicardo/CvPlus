@@ -68,6 +68,8 @@ import { ConfirmComponent } from './componet/commons/confirm/confirm.component';
 import { FormExperienciaComponent } from './componet/admin/experiecia/form-experiencia/form-experiencia.component';
 import { ItemExperienciaComponent } from './componet/admin/experiecia/item-experiencia/item-experiencia.component';
 import { SectionExperienciaComponent } from './componet/admin/experiecia/section-experiencia/section-experiencia.component';
+import { DetalleEstudiosComponent } from './componet/admin/detalle-estudios/detalle-estudios.component';
+import { DetalleExperienciaComponent } from './componet/admin/detalle-experiencia/detalle-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +93,9 @@ import { SectionExperienciaComponent } from './componet/admin/experiecia/section
     ConfirmComponent,
     FormExperienciaComponent,
     ItemExperienciaComponent,
-    SectionExperienciaComponent
+    SectionExperienciaComponent,
+    DetalleEstudiosComponent,
+    DetalleExperienciaComponent
   ],
   imports: [
     BrowserModule,
