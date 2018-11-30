@@ -1,5 +1,6 @@
 export interface ExperienciaInterface {
     id?: string;
+    orden?: number;
     imagen?: string;
     empresa?: string;
     cargo?: string;

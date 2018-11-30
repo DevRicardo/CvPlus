@@ -4,6 +4,10 @@
     <div fxFlex class="example-container">
 
         <mat-form-field>
+            <input type="number" matInput [(ngModel)]="experiencia.orden" #orden="ngModel" name="orden" placeholder="Orden">
+          </mat-form-field>
+
+        <mat-form-field>
           <input matInput [(ngModel)]="experiencia.empresa" #empresa="ngModel" name="empresa" placeholder="Empresa">
         </mat-form-field>
 

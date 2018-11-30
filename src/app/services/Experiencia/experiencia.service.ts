@@ -14,7 +14,7 @@ export class ExperienciaService {
   experienciaDocument: AngularFirestoreDocument<ExperienciaInterface>;
 
   constructor(public afs: AngularFirestore) {
-    this.experienciaCollection = this.afs.collection<ExperienciaInterface>('experiencias');
+    this.experienciaCollection = this.afs.collection<ExperienciaInterface>('experiencias', ref => ref.orderBy('orden', 'asc'));
   }
 
   get() {

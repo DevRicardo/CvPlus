@@ -21,6 +21,7 @@ export class FormExperienciaComponent implements OnInit {
 
   ourFile: File; // hold our file
   experiencia: ExperienciaInterface = {
+    orden: 0,
     imagen: '',
     empresa: '',
     cargo: '',

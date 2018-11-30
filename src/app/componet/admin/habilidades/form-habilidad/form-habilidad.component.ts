@@ -23,6 +23,7 @@ export class FormHabilidadComponent implements OnInit {
 
   ourFile: File; // hold our file
   habilidad: HabilidadInterface = {
+    orden: 0,
     nombre: '',
     imagen: '',
     descripcion: '',

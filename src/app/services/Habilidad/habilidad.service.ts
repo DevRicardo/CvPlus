@@ -14,7 +14,7 @@ export class HabilidadService {
   habilidadDocument: AngularFirestoreDocument<HabilidadInterface>;
 
   constructor(public afs: AngularFirestore) {
-    this.habilidadCollection = afs.collection<HabilidadInterface>('habilidades');
+    this.habilidadCollection = afs.collection<HabilidadInterface>('habilidades', ref => ref.orderBy('orden', 'asc'));
   }
 
 

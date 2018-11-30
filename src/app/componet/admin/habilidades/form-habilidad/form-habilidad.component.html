@@ -3,7 +3,13 @@
    
     <div fxFlex="50%" >
         <form (ngSubmit)="onActionForm(FormHabilidad)" name="FormHabilidad" #FormHabilidad="ngForm" class="example-container">
+        
         <mat-form-field>
+            <input type="number" matInput [(ngModel)]="habilidad.orden" #orden="ngModel" name="orden" placeholder="Orden">
+          </mat-form-field>
+    
+        
+          <mat-form-field>
             <input matInput [(ngModel)]="habilidad.nombre" #nombre="ngModel" name="nombre" placeholder="Nombre">
           </mat-form-field>
      
