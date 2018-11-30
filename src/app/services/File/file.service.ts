@@ -15,12 +15,18 @@ export class FileService {
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
   fileRef;
-  constructor(private storage: AngularFireStorage) {}
+  dateUpload: Date;
+  constructor(private storage: AngularFireStorage) {
+    this.dateUpload = new Date();
+  }
 
   pushUpload(upload: Upload) {
+
+    const sufijo = this.dateUpload.getDate();
+
     this.fileRef = this.storage.ref(`${this.basePath}/${upload.name}`);
 
-    const task = this.storage.upload(`${this.basePath}/${upload.name}`, upload.file);
+    const task = this.storage.upload(`${this.basePath}/${upload.name}_${sufijo}`, upload.file);
 
      return task;
 
