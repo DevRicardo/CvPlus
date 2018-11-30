@@ -14,7 +14,7 @@ export class EstudioService {
   estudioDocument: AngularFirestoreDocument<EstudioInterface>;
 
   constructor(public afs: AngularFirestore) {
-    this.estudioCollection = this.afs.collection<EstudioInterface>('estudios');
+    this.estudioCollection = this.afs.collection<EstudioInterface>('estudios', ref => ref.orderBy('orden', 'asc'));
   }
 
   get() {

@@ -1,6 +1,7 @@
 export interface EstudioInterface {
 
     id?: string;
+    orden?: number;
     institucion?: string;
     imagen?: string;
     titulo?: string;

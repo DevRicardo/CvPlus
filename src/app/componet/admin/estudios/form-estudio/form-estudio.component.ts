@@ -21,6 +21,7 @@ export class FormEstudioComponent implements OnInit {
 
   ourFile: File; // hold our file
   estudio: EstudioInterface = {
+    orden: 0,
     institucion: '',
     titulo: '',
     imagen: '',
