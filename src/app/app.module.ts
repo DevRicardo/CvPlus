@@ -152,7 +152,9 @@ import { DetalleExperienciaComponent } from './componet/admin/detalle-experienci
   entryComponents: [
     LoginComponent,
     LoaderComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    DetalleEstudiosComponent,
+    DetalleExperienciaComponent
   ],
   providers: [LoginService, AuthGuard, PersonalService, FileService],
   bootstrap: [AppComponent]

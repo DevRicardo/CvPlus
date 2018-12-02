@@ -1,3 +1,30 @@
-<p>
-  detalle-estudios works!
-</p>
+<mat-dialog-content class="mat-typography">
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.9%" fxLayoutAlign="center center" class="container-admin">
+      <div fxFlex="30">
+        <img [src]="data.imagen" alt="" width="60">
+      </div>
+    
+      <div fxFlex="70">
+          <h2>{{data.institucion}}</h2>
+          <span>{{ data.titulo }}</span>
+      </div>
+    </div>
+
+    <mat-form-field class="full" style="margin-top: 30px;">
+        <input type="text" readonly matInput [value]="data.inicio.toDate() | date: 'medium'"  placeholder="Fecha de inicio">
+    </mat-form-field>
+
+    <mat-form-field class="full" *ngIf="!data.actual">
+        <input type="text" readonly matInput [value]="data.fin.toDate() | date: 'medium'"  placeholder="Fecha de finalización">
+    </mat-form-field>
+
+    <mat-checkbox [checked]="data.actual" [readonly]="true">Estudiando actualmente</mat-checkbox>
+        
+       
+ 
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancelar()">Cancelar</button>
+  <button mat-stroked-button color="primary" (click)="onAceptar()" cdkFocusInitial>Aceptar</button>
+</mat-dialog-actions>

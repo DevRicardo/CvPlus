@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EstudioInterface } from 'src/app/models/EstudioInterface';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DetalleEstudiosComponent } from '../../detalle-estudios/detalle-estudios.component';
 
 @Component({
   selector: 'app-item-estudio',
@@ -8,11 +10,26 @@ import { EstudioInterface } from 'src/app/models/EstudioInterface';
 })
 export class ItemEstudioComponent implements OnInit {
 
+  private dialogConfig;
+
   @Input() public estudio: EstudioInterface;
 
-  constructor() { }
+  constructor(
+    private matDialog: MatDialog,
+  ) {
+    this.dialogConfig = new MatDialogConfig();
+  }
 
   ngOnInit() {
+  }
+
+
+  showDetails() {
+    this.dialogConfig.disableClose = false;
+    this.dialogConfig.autoFocus = true;
+    //this.dialogConfig.minWidth = 500;
+    this.dialogConfig.data = this.estudio;
+    this.matDialog.open(DetalleEstudiosComponent, this.dialogConfig);
   }
 
 }
