@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { ExperienciaInterface } from 'src/app/models/ExperienciaInterface';
 
 @Component({
   selector: 'app-detalle-experiencia',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleExperienciaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<DetalleExperienciaComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ExperienciaInterface) { }
 
   ngOnInit() {
+  }
+
+  onCancelar(): void {
+    this.dialogRef.close(this.data);
   }
 
 }

@@ -1,3 +1,33 @@
-<p>
-  detalle-experiencia works!
-</p>
+<mat-dialog-content class="mat-typography">
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.9%" fxLayoutAlign="center center" class="container-admin">
+        <div fxFlex="30">
+          <img [src]="data.imagen" alt="" width="60">
+        </div>
+      
+        <div fxFlex="70">
+            <h2>{{data.empresa}}</h2>
+            <span>{{ data.cargo }}</span>
+        </div>
+      </div>
+
+      <mat-form-field class="full" style="margin-top: 30px;">
+          <textarea matInput [value]="data.detalles" placeholder="Funciones" readonly></textarea>
+      </mat-form-field>   
+  
+      <mat-form-field class="full" style="margin-top: 30px;">
+          <input type="text" readonly matInput [value]="data.inicio.toDate() | date: 'medium'"  placeholder="Fecha de inicio">
+      </mat-form-field>
+  
+      <mat-form-field class="full" *ngIf="!data.actual">
+          <input type="text" readonly matInput [value]="data.fin.toDate() | date: 'medium'"  placeholder="Fecha de finalización">
+      </mat-form-field>
+  
+      <mat-checkbox [checked]="data.actual" [disabled]="true">Trabajando actualmente</mat-checkbox>
+          
+            
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onCancelar()">Cerrar</button>
+  </mat-dialog-actions>
+  

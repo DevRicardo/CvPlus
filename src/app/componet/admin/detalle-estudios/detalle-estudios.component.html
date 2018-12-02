@@ -19,12 +19,11 @@
         <input type="text" readonly matInput [value]="data.fin.toDate() | date: 'medium'"  placeholder="Fecha de finalización">
     </mat-form-field>
 
-    <mat-checkbox [checked]="data.actual" [readonly]="true">Estudiando actualmente</mat-checkbox>
+    <mat-checkbox [checked]="data.actual" [disabled]="true">Estudiando actualmente</mat-checkbox>
         
        
  
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onCancelar()">Cancelar</button>
-  <button mat-stroked-button color="primary" (click)="onAceptar()" cdkFocusInitial>Aceptar</button>
+  <button mat-button (click)="onCancelar()">Cerrar</button>
 </mat-dialog-actions>

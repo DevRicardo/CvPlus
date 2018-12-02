@@ -27,7 +27,6 @@ export class ItemEstudioComponent implements OnInit {
   showDetails() {
     this.dialogConfig.disableClose = false;
     this.dialogConfig.autoFocus = true;
-    //this.dialogConfig.minWidth = 500;
     this.dialogConfig.data = this.estudio;
     this.matDialog.open(DetalleEstudiosComponent, this.dialogConfig);
   }
